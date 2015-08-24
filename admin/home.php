@@ -118,7 +118,7 @@
 								</div>
 							</div>
 						</div>
-                        <a href="<?php echo WEB_ROOT; ?>admin/modules/domains/index.php">
+                        <a href="<?php echo WEB_ROOT; ?>admin/modules/domain/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
