@@ -1,46 +1,46 @@
 <?php
-require_once ("../../../includes/initialize.php");
-//checkAdmin();
-$view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
-
-switch ($view) {
-	case 'list' :
+	require_once ("../../../includes/initialize.php");
+	//checkAdmin();
+	$view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
+	
+	switch ($view) {
+		case 'list' :
 		$content    = 'list.php';		
 		break;
-
-	case 'add' :
+		
+		case 'add' :
 		$content    = 'add.php';		
 		break;
-
-	case 'edit' :
+		
+		case 'edit' :
 		$content    = 'edit.php';		
 		break;
-    case 'view' :
+		case 'view' :
 		$content    = 'view.php';		
 		break;
-	case 'ProjectConsultant' :
+		case 'ProjectConsultant' :
 		$content    = 'projectConsultant.php';		
 		break;
-	case 'assign' :
+		case 'assign' :
 		$content    = 'assignsubj.php';		
 		break;
-	case 'delsubj' :
+		case 'delsubj' :
 		$content    = 'assignsubj.php';		
 		break;
-	case 'enroll' :
+		case 'enroll' :
 		$content    = 'enrollment.php';		
 		break;
-	case 'editenrollment' :
-	$content    = 'editenrollment.php';		
-	break;
-
-	default :
+		case 'editenrollment' :
+		$content    = 'editenrollment.php';		
+		break;
+		
+		default :
 		$content    = 'list.php';
-				
-}
-
-require_once '../../theme/frontendTemplateOfficer.php';
+		
+	}
+	
+	require_once '../../theme/frontendTemplateOfficer.php';
 ?>
 
 
-  
+

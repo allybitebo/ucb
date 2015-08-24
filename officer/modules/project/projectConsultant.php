@@ -4,8 +4,8 @@
 			<div class="row">
 				<div class="col-xs-3"><p ><strong><h5 align="left"><?php echo $_SESSION['ACCOUNT_FNAME']. " " .$_SESSION['ACCOUNT_LNAME']  ; ?></h5></strong></p></div>
 				<div class="col-xs-3"></div>
-				<div class="col-xs-3"></div>
-				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>officer/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p></div>
+				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>/officer/index.php?page=1" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></p></div>
+				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT; ?>officer/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Log out</a></p></div>
 			</div>
 		</div>  
 		
@@ -40,12 +40,15 @@
 								//global $mydb;
 								//$cur = $mydb->loadResultList();
 								//foreach ($cur as $project) {
+								
 								if ($_SESSION['BUREAU_ID'] != NULL){
 									$project = new Project();
 									$projectList = $project->listOfprojectsBureau($_SESSION['BUREAU_ID']);
+									$projectFrom = "bureau";
 									} else{
 									$project = new Project();
 									$projectList = $project->listOfprojectsSchool($_SESSION['SCHOOL_ID']);
+									$projectFrom = "school";
 								}
 								foreach ($projectList as $list) {
 									echo '<tr>';
@@ -53,7 +56,7 @@
 									echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->project_id. '"/>';
 									echo '<td width="55%" >'. $list->project_name.'</td>';
 									
-									echo '<td><a href = "index.php?view=view&projectId='.$list->project_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
+									echo '<td><a href = "index.php?view=view&projectId='.$list->project_id.'&from='.$projectFrom.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
 									echo '</tr>';
 								}
 								
@@ -63,26 +66,14 @@
 						</tbody>
 					</table>
 					
-					<div class="form-group">
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="address">New Project:</label>
-							<div class="col-md-4" >
-								<li class="leaf"><a href="<?php echo WEB_ROOT; ?>admin/modules/project/index.php?view=add"> Add </a></li>
-							</div>
-						</div>
-					</div>
 					<?php 
-						if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
+						if($_SESSION['ACCOUNT_TYPE']=='officer'){
 							echo '
 							<div class="btn-group">
-							<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-							<button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
+							<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  Add New Project</a>
 							</div>';
-							}elseif($_SESSION['ACCOUNT_TYPE']=='Officer') {
-							echo '
-							<div class="btn-group">
-							<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-							</div>';
+							}else{
+							//redirect to home page
 						}
 					?>
 				</form>

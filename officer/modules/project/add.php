@@ -19,47 +19,31 @@
 				</div>
 			</div> <br /><br />
 			
-			<div class="col-md-8">
-				<label class="col-md-4 control-label" for="clientname">Client Name</label>
-				
-				<div class="col-md-8">
-					<input class="form-control input-sm" id="clienttname" name="clientname" placeholder="Client Name" type="text" value="">
-				</div>
-			</div> <br /><br />
-			
 			
 			<div class="col-md-8">
-				<label class="col-md-4 control-label" for="clientcontact">Client Contacts</label>
+				<label class="col-md-4 control-label" for="sday">Start Date</label>
 				
 				<div class="col-md-8">
-					<textarea class="form-control input-sm" id="clientcontact" name="clientcontact" placeholder="Client Contact" type="text" value=""></textarea>
+					<div class="input-group date form_curdate col-md-15" data-date="" data-date-format="yyyy-mm-dd" data-link-field="any" data-link-format="yyyy-mm-dd">
+						<input class="form-control" size="11" type="text" value="<?php echo $cur->start_date; ?>" readonly name="sday" id="sday">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+					</div>
 				</div>
-			</div> <br /><br />
+			</div>
+			<br /><br />
 			
-					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="sday">Start Date</label>
-						
-						<div class="col-md-8">
-							<div class="input-group date form_curdate col-md-15" data-date="" data-date-format="yyyy-mm-dd" data-link-field="any" data-link-format="yyyy-mm-dd">
-								<input class="form-control" size="11" type="text" value="<?php echo $cur->start_date; ?>" readonly name="sday" id="sday">
-								<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-							</div>
-						</div>
+			<div class="col-md-8">
+				<label class="col-md-4 control-label" for="eday">End Date</label>
+				
+				<div class="col-md-8">
+					<div class="input-group date form_curdate col-md-15" data-date="" data-date-format="yyyy-mm-dd" data-link-field="any" data-link-format="yyyy-mm-dd">
+						<input class="form-control" size="11" type="text" value="<?php echo $cur->end_date; ?>" readonly name="eday" id="eday">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 					</div>
-					<br /><br />
-					
-					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="eday">End Date</label>
-						
-						<div class="col-md-8">
-							<div class="input-group date form_curdate col-md-15" data-date="" data-date-format="yyyy-mm-dd" data-link-field="any" data-link-format="yyyy-mm-dd">
-								<input class="form-control" size="11" type="text" value="<?php echo $cur->end_date; ?>" readonly name="eday" id="eday">
-								<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-							</div>
-						</div>
-					</div>
+				</div>
+			</div>
 			<br /><br />
 			
 			
@@ -84,11 +68,11 @@
 				<label class="col-md-4 control-label" for="status">Status</label>
 				
 				<div class="col-md-8">
-			<select class="form-control input-sm" name="status" id="status">
-							<option value=""></option>
-							<option value="Ongoing">On going </option>
-							<option value="Complete">Completed</option>	
-						</select>
+					<select class="form-control input-sm" name="status" id="status">
+						<option value=""></option>
+						<option value="Ongoing">On going </option>
+						<option value="Complete">Completed</option>	
+					</select>
 				</div>
 			</div> <br /><br />
 			
@@ -118,7 +102,7 @@
 				</div>
 			</div>
 			<br /><br />
-				
+			
 			<div class="col-md-8">
 				<label class="col-md-4 control-label" for="psector">Project-Sector</label>
 				
@@ -171,6 +155,6 @@
 		</form>
 		
 		<!--End of well-->
-			<!--End of container-->
-			
-		</div><!--End of container-->																				
+		<!--End of container-->
+		
+	</div><!--End of container-->																				
