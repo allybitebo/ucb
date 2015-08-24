@@ -66,6 +66,9 @@
 				</div>';
 			}
 		?>
+		<br />
+		<br />
+		
 	</form>
 </div><!--End of well-->
 
