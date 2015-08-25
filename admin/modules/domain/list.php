@@ -10,32 +10,32 @@
 			</div>
 		</div> 
 		<div class="wells">
-				<h3 align="left">List of Domains</h3>
-			    <form action="controller.php?action=delete" Method="POST">  					
-					<table id="example" class="table table-striped" cellspacing="0">
-				
-				  <thead>
-				  	<tr>
-				  		<th>No.</th>
-				  		<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> Domain #</th>
-				  		<th>Domain Name</th>
-				  		<th>Description</th>
-						<th>Edit</th>
-                        <th>Details</th>
-				  	</tr>	
-				  </thead>
-				  <tbody>
-				  	<?php
-						$account_username = $_SESSION['ACCOUNT_USERNAME'];
-					//	$account_password = $_SESSION['ACCOUNT_PASSWORD'];
-						$account_type = $_SESSION['ACCOUNT_TYPE'];
-						//echo 'username =   '. $account_username;echo " \n";
-				       // echo 'account type =   '. $account_type;
-						//echo 'password =   '. $account_password;
-						//if($account_password!= Null ) {
-								$domain = new Domain();
-								$domainList = $domain->listOfDomains();
-								foreach ($domainList as $list) {
+			<h3 align="left">List of Domains</h3>
+			<form action="controller.php?action=delete" Method="POST">  					
+				<table id="example" class="table table-striped" cellspacing="0">
+					
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> Domain #</th>
+							<th>Domain Name</th>
+							<th>Description</th>
+							<th>Edit</th>
+							<th>Details</th>
+						</tr>	
+					</thead>
+					<tbody>
+						<?php
+							$account_username = $_SESSION['ACCOUNT_USERNAME'];
+							//	$account_password = $_SESSION['ACCOUNT_PASSWORD'];
+							$account_type = $_SESSION['ACCOUNT_TYPE'];
+							//echo 'username =   '. $account_username;echo " \n";
+							// echo 'account type =   '. $account_type;
+							//echo 'password =   '. $account_password;
+							//if($account_password!= Null ) {
+							$domain = new Domain();
+							$domainList = $domain->listOfDomains();
+							foreach ($domainList as $list) {
 								echo '<tr>';
 								echo '<td width="5%" align="center"></td>';
 								echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->domain_id. '"/>';
@@ -44,34 +44,28 @@
 								echo '<td width="15%" ><a href = "index.php?view=edit&id='.$list->domain_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a></td>';
 								echo '<td><a href = "index.php?view=view&domainId='.$list->domain_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
 								echo '</tr>';
-								}
-				  	?>
-
-
-				  </tbody>
-				 
+							}
+						?>
+					</tbody>
 				</table>
-				
-
 				<?php 
 					if($_SESSION['ACCOUNT_TYPE']=='administrator'){
 						echo '
 						<div class="btn-group">
-						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-						   <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
+						<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
+						<button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
 						</div>';
-					}elseif($_SESSION['ACCOUNT_TYPE']=='Officer') {
+						}elseif($_SESSION['ACCOUNT_TYPE']=='Officer') {
 						echo '
 						<div class="btn-group">
-						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
+						<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
 						</div>';
 					}
-
+					
 				?>
 				
 				<br />
 				<br />
-				</form>
-	  	</div><!--End of well-->
-
-</div><!--End of container-->
+			</form>
+		</div>
+	</div>		

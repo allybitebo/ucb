@@ -1,4 +1,3 @@
-
 <div class="container">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
@@ -143,7 +142,7 @@
 								</div>
 							</div>
 							</div>
-							<a href="admin/modules/subjects/index.php">
+							<a href="admin/modules/subject/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -299,7 +298,5 @@
 	</div>                    
 
 	</div>                     
-</div> 
-</div>
-</div><!--container-->
+
 
