@@ -15,11 +15,10 @@ class Department{
 		return $mydb->getFieldsOnOneTable(self::$tbl_name);
 	}
 	
-	function find_all_dept($deptname=""){
+	function find_all_department(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
-							FROM  ".self::$tbl_name." 
-							WHERE  department_name ='{$deptname}'");
+							FROM  ".self::$tbl_name."");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			return $row_count;

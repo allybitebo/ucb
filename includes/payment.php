@@ -24,9 +24,18 @@
 			return $cur;
 		}
 		
+		function find_all_payment(){
+			global $mydb;
+			$mydb->setQuery("SELECT * 
+			FROM  ".self::$tbl_name."");
+			$cur = $mydb->executeQuery();
+			$row_count = $mydb->num_rows($cur);//get the number of count
+			return $row_count;
+		}
+		
 		
 		/*--------------------------------for search functionlity ----------------------------------
-			function listOfConsultant(){
+			function listOfPayment(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 			FROM  ".self::$tbl_name);
@@ -36,7 +45,7 @@
 		--------------------------------------------------------------------------------------------*/
 		
 		/*
-			function listOfConsultant(){
+			function listOfPayment(){
 			global $mydb;
 			$mydb->setQuery("SELECT consultant_id,firstname,lastname,user_account_id FROM `consultants`");
 			$cur = $mydb->loadResultList();

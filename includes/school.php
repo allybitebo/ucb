@@ -7,13 +7,21 @@
 */
 require_once(LIB_PATH.DS.'database.php');
 class School{
-	
 	protected static $tbl_name = "schools";
 	function db_fields(){
 		global $mydb;
 		return $mydb->getFieldsOnOneTable(self::$tbl_name);
 	}
 	
+	function find_all_school(){
+			global $mydb;
+			$mydb->setQuery("SELECT * 
+			FROM  ".self::$tbl_name."");
+			$cur = $mydb->executeQuery();
+			$row_count = $mydb->num_rows($cur);//get the number of count
+			return $row_count;
+		}
+		
 	/*function find_all_col($colname=""){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
