@@ -12,14 +12,6 @@
 		$content    = 'add.php';		
 		break;
 		
-		case 'addinbureau' :
-		$content    = 'addinbureau.php';		
-		break;
-		
-		case 'addinschool' :
-		$content    = 'addinschool.php';		
-		break;
-		
 		case 'edit' :
 		$content    = 'edit.php';		
 		break;

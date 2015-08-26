@@ -70,7 +70,7 @@
 						if($_SESSION['ACCOUNT_TYPE']=='officer'){
 							echo '
 							<div class="btn-group">
-							<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  Add New Project</a>
+							<a href="index.php?view=add&from='.$projectFrom.'" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  Add New Project</a>
 							</div>';
 							}else{
 							//redirect to home page
