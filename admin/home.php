@@ -8,7 +8,6 @@
 				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>admin/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p></div>
 			</div>
 		</div>  
-		
 		<div class="panel-body" >			
 			<div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -19,7 +18,6 @@
                                     <P><strong><h5>Projects</h5></strong></p>	
 								</div>
                                 <div class="col-xs-9 text-right">
-								
 								<?php
 								$project = new Project();
 								$projectnum = $project->find_all_project();
@@ -161,20 +159,24 @@
 						</a>
 					</div>
 				</div>
-                <div class="col-lg-3 col-md-6">
+				
+				<div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <P><strong><h5>Clients</h5></strong></p>
+									<P><strong><h5>Clients</h5></strong></p>
 								</div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-									
+								<div class="col-xs-9 text-right">
+									<?php
+									$client = new Client();
+								    $clientnum = $client->find_all_client();
+									?>
+									<div class="huge"><?php echo $clientnum; ?></div>
 								</div>
 							</div>
-						</div>
-                        <a href="#">
+							</div>
+							<a href="<?php echo WEB_ROOT; ?>admin/modules/client/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
                                 <div class="clearfix"></div>
@@ -216,7 +218,6 @@
                             <div class="row">
                                 <div class="col-xs-3">
                                     <P><strong><h5>Officers</h5></strong></p>
-									
 								</div>
                                 <div class="col-xs-9 text-right">
 									<?php
@@ -248,7 +249,6 @@
 									   $paymentnum = $payment->find_all_payment();
 									?>
 									<div class="huge"><?php echo $paymentnum; ?></div>
-									
 								</div>
 							</div>
 							</div>

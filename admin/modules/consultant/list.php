@@ -1,4 +1,3 @@
-
 <div class="container">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
@@ -13,7 +12,6 @@
 				<h3 align="left">List of Consultant</h3>
 			    <form action="controller.php?action=list" Method="POST">  					
 					<table id="example" class="table table-striped" cellspacing="0">
-				
 				  <thead>
 				  	<tr>
 				  		<th>No.</th>
@@ -26,15 +24,9 @@
 				  </thead>
 				  <tbody>
 				  	<?php
-						$account_username = $_SESSION['ACCOUNT_USERNAME'];
-						//$account_password = $_SESSION['ACCOUNT_PASSWORD'];
-					
-						//if($account_password!= Null) {
-			
 								$consultant = new Consultant();
 								$consultantList = $consultant->listOfconsultant();
 								foreach ($consultantList as $list) {
-								//echo '<tr>';
 								echo '<td width="5%" align="center"></td>';
 								echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->consultant_id. '"/>';
 								echo '<td width="30%" >'. $list->firstname.'</td>';
@@ -43,17 +35,9 @@
 								echo '<td><a href = "index.php?view=view&consultantId='.$list->consultant_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
 								echo '</tr>';
 								}
-
-							//} 
-						
-						
-				  	
 				  	?>
-
 				  </tbody>
-				 
 				</table>
-		
 				<?php 
 					if($_SESSION['ACCOUNT_TYPE']=='administrator'){
 						echo '
@@ -67,8 +51,9 @@
 						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
 						</div>';
 					}
-
 				?>
+				<br />
+				<br />
 				</form>
 	  	</div><!--End of well-->
 
