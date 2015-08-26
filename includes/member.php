@@ -100,11 +100,8 @@
 			
 		static function AuthenticateConsultant($email="", $h_upass=""){
 			global $mydb;
-<<<<<<< HEAD
+
 			$mydb->setQuery("SELECT user_first_name, user_last_name,systemusers.user_account_id,user_name,account_password,account_type FROM `systemusers` WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' and `account_type`='consultant' LIMIT 1");
-=======
-			$mydb->setQuery("SELECT systemusers.user_account_id,user_name,account_password,account_type FROM `systemusers` WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' and `account_type` = 'consultant' LIMIT 1");
->>>>>>> db08a2644152627500c7f5fc754219ab000e4231
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			if ($row_count == 1){
