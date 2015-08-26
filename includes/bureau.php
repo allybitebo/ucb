@@ -22,11 +22,10 @@ class Bureau{
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
-	function find_all_bureau($bureau_name=""){
+	function find_all_bureau(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
-							FROM  ".self::$tbl_name." 
-							WHERE  name ='{$bureau_name}'");
+							FROM  ".self::$tbl_name."");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			return $row_count;

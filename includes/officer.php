@@ -15,11 +15,10 @@ class Officer{
 		return $mydb->getFieldsOnOneTable(self::$tbl_name);
 	}
 	
-	function find_all_officer($officer_name=""){
+	function find_all_officer(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
-							FROM  ".self::$tbl_name." 
-							WHERE  department_name ='{$department_name}'");
+							FROM  ".self::$tbl_name."");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			return $row_count;
@@ -32,25 +31,7 @@ class Officer{
 			$cur = $mydb->loadResultList();
 			return $cur;
 	}
-	
 
-/*--------------------------------for search functionlity ----------------------------------
-	function listOfConsultant(){
-			global $mydb;
-			$mydb->setQuery("SELECT * 
-							FROM  ".self::$tbl_name);
-			$cur = $mydb->loadResultList();
-			return $cur;
-	}
---------------------------------------------------------------------------------------------*/
- 
-/*
-	function listOfConsultant(){
-		global $mydb;
-			$mydb->setQuery("SELECT consultant_id,firstname,lastname,user_account_id FROM `consultants`");
-			$cur = $mydb->loadResultList();
-			return $cur;
-*/
 	function listOfDepartmentOfficer($department_id){
 			global $mydb;
 			$mydb->setQuery("SELECT * 

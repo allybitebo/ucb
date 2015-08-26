@@ -14,17 +14,16 @@ class Subject{
 		return $mydb->getFieldsOnOneTable(self::$tbl_name);
 	}
 	
-	function find_all_subject($subj_code=""){
+	function find_all_subject(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
-							FROM  ".self::$tbl_name." 
-							WHERE  `SUBJ_CODE` ='{$subject_code}'");
+							FROM  ".self::$tbl_name."");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			return $row_count;
 	}
 
-	function listOfsubjects(){
+	function listOfSubjects(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 							FROM  ".self::$tbl_name);

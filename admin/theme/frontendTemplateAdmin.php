@@ -73,7 +73,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 		<link rel="stylesheet" href="<?php echo WEB_ROOT; ?>css/normalize.css">
 		
 		<link rel="stylesheet" href="<?php echo WEB_ROOT; ?>css/buttonstyle.css">
-		<!-- end of button css -->
+		<!-- end of button css -->	
 		
 		<!-- Bootstrap core CSS -->
 		<link href="<?php echo WEB_ROOT; ?>css/bootstrap.min.css" rel="stylesheet">
@@ -152,22 +152,6 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 			//login confirmation
 			//studconfirm_logged_in();
 		?>
-		<script type="text/javascript" src="<?php echo WEB_ROOT; ?>/admin/theme/js/jquery.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				
-				$("#psector").change(function() {
-					$(this).after('<div id="loader"><img src="<?php echo WEB_ROOT; ?>/admin/theme/img/loading.gif" alt="loading project domains" /></div>');
-					$.get('loaddomain.php?psector=' + $(this).val(), function(data) {
-						$("#domain").html(data);
-						$('#loader').slideUp(200, function() {
-							$(this).remove();
-						});
-					});	
-				});
-				
-			});
-		</script>
 	</head>
 	<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-125 node-type-page" >
 		
@@ -199,8 +183,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 				
 				<div class="udsm6-sheet clearfix">
 					<!--<div class="panel panel-primary">-->
-					<?php check_message(); ?>
-					<?php require_once $content;?>
+					 	<?php require_once $content;?>
 					<!--</div>	-->
 					
 				</div>	
@@ -223,39 +206,39 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 			</div>
 			</div><div id="banner6">  <div class="region region-banner6">
 				<div class="block block-views" id="block-views-icon-banner-bottom-block">
-				<div class="content">
-				<div class="view view-icon-banner-bottom view-id-icon_banner_bottom view-display-id-block view-dom-id-ff076c391675192b53622befc584a614">
-				
-				</div></div>
+					<div class="content">
+						<div class="view view-icon-banner-bottom view-id-icon_banner_bottom view-display-id-block view-dom-id-ff076c391675192b53622befc584a614">
+							
+						</div></div>
 				</div>
-				</div>
-				</div>
-				</div>
-				
-				</div>
-				
-				
-				</body>
-				</html>
-				
-				<hr>
-				<footer>
-				<p align="center">&copy; University of Dar es Salaam - Consultancy Bureau <?php echo date('Y') ?></p>
-				<!--      <script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>-->
-				<!-- button css
-				<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:700' rel='stylesheet' type='text/css'>
-				
-				<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
-				<!-- end of button css -->
-				<script src="<?php echo WEB_ROOT; ?>js/tooltip.js"></script>
-				<!--     <script src="assets/js/jquery.js"></script>>-->
-				<script src="<?php echo WEB_ROOT; ?>js/bootstrap.min.js"></script>
-				<script src="<?php echo WEB_ROOT; ?>js/popover.js"></script>
-				<script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-				<script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
-				
-				<script type="text/javascript">
-				$('.form_curdate').datetimepicker({
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+</body>
+</html>
+
+	<hr>
+	<footer>
+		<p align="center">&copy; University of Dar es Salaam - Consultancy Bureau <?php echo date('Y') ?></p>
+		<!--      <script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>-->
+		<!-- button css
+			<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:700' rel='stylesheet' type='text/css'>
+			
+			<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+		<!-- end of button css -->
+		<script src="<?php echo WEB_ROOT; ?>js/tooltip.js"></script>
+		<!--     <script src="assets/js/jquery.js"></script>>-->
+		<script src="<?php echo WEB_ROOT; ?>js/bootstrap.min.js"></script>
+		<script src="<?php echo WEB_ROOT; ?>js/popover.js"></script>
+		<script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript">
+			$('.form_curdate').datetimepicker({
 				language:  'en',
 				weekStart: 1,
 				todayBtn:  1,
@@ -264,8 +247,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 				startView: 2,
 				minView: 2,
 				forceParse: 0
-				});
-				$('.form_bdatess').datetimepicker({
+			});
+			$('.form_bdatess').datetimepicker({
 				language:  'en',
 				weekStart: 1,
 				todayBtn:  1,
@@ -274,44 +257,44 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 				startView: 2,
 				minView: 2,
 				forceParse: 0
-				});
-				</script>
-				<script>
-				function checkall(selector)
-				{
+			});
+		</script>
+		<script>
+			function checkall(selector)
+			{
 				if(document.getElementById('chkall').checked==true)
 				{
-				var chkelement=document.getElementsByName(selector);
-				for(var i=0;i<chkelement.length;i++)
-				{
-				chkelement.item(i).checked=true;
-				}
+					var chkelement=document.getElementsByName(selector);
+					for(var i=0;i<chkelement.length;i++)
+					{
+						chkelement.item(i).checked=true;
+					}
 				}
 				else
 				{
-				var chkelement=document.getElementsByName(selector);
-				for(var i=0;i<chkelement.length;i++)
-				{
-				chkelement.item(i).checked=false;
+					var chkelement=document.getElementsByName(selector);
+					for(var i=0;i<chkelement.length;i++)
+					{
+						chkelement.item(i).checked=false;
+					}
 				}
-				}
-				}
-				function checkNumber(textBox){
+			}
+			function checkNumber(textBox){
 				while (textBox.value.length > 0 && isNaN(textBox.value)) {
-				textBox.value = textBox.value.substring(0, textBox.value.length - 1)
+					textBox.value = textBox.value.substring(0, textBox.value.length - 1)
 				}
 				textBox.value = trim(textBox.value);
-				}
-				//
-				function checkText(textBox)
-				{
+			}
+			//
+			function checkText(textBox)
+			{
 				var alphaExp = /^[a-zA-Z]+$/;
 				while (textBox.value.length > 0 && !textBox.value.match(alphaExp)) {
-				textBox.value = textBox.value.substring(0, textBox.value.length - 1)
+					textBox.value = textBox.value.substring(0, textBox.value.length - 1)
 				}
 				textBox.value = trim(textBox.value);
-				}
-				function calculate(){  
+			}
+			function calculate(){  
 				
 				var first = document.getElementById('first').value; 
 				var second = document.getElementById('second').value; 
@@ -321,9 +304,9 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 				var totalVal = parseInt(first) + parseInt(second) + parseInt(third) + parseInt(fourth) ;
 				document.getElementById('finalave').value = totalVal;
 				document.getElementById('finalave').value = Math.round((parseInt(totalVal)/4));  
-				}
-				</script>     
-				
-				</footer>
-				</body>
-				</html>																																									
+			}
+		</script>     
+		
+	</footer>
+</body>
+</html>																																					
