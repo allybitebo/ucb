@@ -99,14 +99,16 @@
 			
 		static function AuthenticateConsultant($email="", $h_upass=""){
 			global $mydb;
-			$mydb->setQuery("SELECT systemusers.user_account_id,user_name,account_password,account_type FROM `systemusers` WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' LIMIT 1");
+			$mydb->setQuery("SELECT user_first_name, user_last_name,systemusers.user_account_id,user_name,account_password,account_type FROM `systemusers` WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' and `account_type`='consultant' LIMIT 1");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			if ($row_count == 1){
 				$found_user = $mydb->loadSingleResult();
 				$_SESSION['ACCOUNT_ID'] = $found_user->user_account_id;
 				$_SESSION['ACCOUNT_USERNAME']= $found_user->user_name;
-				$_SESSION['ACCOUNT_PASSWORD']= $found_user->account_password;
+				$_SESSION['ACCOUNT_FNAME']= $found_user->user_first_name;
+				$_SESSION['ACCOUNT_LNAME']= $found_user->user_last_name;
+				//$_SESSION['ACCOUNT_PASSWORD'] = $found_user->account_password;
 				$_SESSION['ACCOUNT_TYPE']    = $found_user->account_type;
 				return true;
 				}else{

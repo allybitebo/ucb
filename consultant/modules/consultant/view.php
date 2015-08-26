@@ -26,7 +26,7 @@
 				<label class="col-md-4 control-label" for="userconsultant_id">User Account Id </label>
 				
 				<div class="col-md-8">
-					<input class="form-control input-sm" id="userconsultant_id" name="userconsultant_id" type="text" value="<?php echo $list->user_account_id; ?>" readonly>
+					<input class="form-control input-sm" id="userconsultant_id" name="userconsultant_id" type="text" value="<?php echo $list->consultant_user_account_id; ?>" readonly>
 				</div>
 				
 			</div>
@@ -136,13 +136,13 @@
 					
 					<div class="col-md-8">
 					<?php
-						$department_id = $list->department_id;
+						$consultant_department_id = $list->consultant_department_id;
 						
 							$department = new Department();
-							$listDepartment = $department->single_department($department_id);
+							$listDepartment = $department->single_department($consultant_department_id);
 						
 					?>
-						<input class="form-control input-sm" id="department_id" name="department_id" type="text" value="<?php echo $listDepartment->name; ?>" readonly>
+						<input class="form-control input-sm" id="department_id" name="department_id" type="text" value="<?php echo $list->consultant_department_id; ?>" readonly>
 						
 					</div>
 				</div>

@@ -1,7 +1,20 @@
-<form action="controller.php?action=add" class="form-horizontal well span9" method="post">
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-xs-3"><p ><strong><h5 align="left"><?php echo $_SESSION['ACCOUNT_FNAME']. " " .$_SESSION['ACCOUNT_LNAME']  ; ?></h5></strong></p></div>
+				<div class="col-xs-3"></div>
+				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>/consultant/index.php?page=1" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></p></div>
+				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT; ?>consultant/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Log out</a></p></div>
+			</div>
+		</div>  
+		
+		<div class="panel-body" >
+			<div class="wells">
+				
+				<form action="controller.php?action=add" class="form-horizontal well span9" method="post">
     <fieldset>
 		<legend>New Consultant</legend>
-		
 		<div class="form-group" id="idno">
 			<div class="col-md-8">
 				<label class="col-md-4 control-label" for="firstname">First Name </label>
@@ -113,25 +126,7 @@
 				</div>
 			</div><br /><br />
 			
-			<div class="col-md-8">
-				<label class="col-md-4 control-label" for="systemuser">User Account Number</label>
-				
-				<div class="col-md-8">
-					<select class="form-control input-sm" name="systemuser" id="systemuser">
-						<?php
-							$systemuser = new Systemuser();
-							$cur = $systemuser->listOfSystemuser();	
-							foreach ($cur as $systemuser ) {
-							echo '<option value="'. $systemuser->user_account_id .'">'. $systemuser->user_account_id .'</option>';
-							}
-						?>
-						
-					</select>	
-				</div>
-			</div><br /><br />
-			
-			
-			   
+		   
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for= "idno"></label>
                       <div class="col-md-8">
@@ -143,7 +138,7 @@
 		
 			</form>
 			
-		<!--End of well-->
+		
 		<!--End of container-->
 		
 		</div><!--End of container-->																		

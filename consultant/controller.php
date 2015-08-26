@@ -42,7 +42,7 @@
 			$MOBILE = $_POST['mobile'];
 			$WEBSITE = $_POST['website'];
 			$DEPARTMENT = $_POST['deptid'];
-			$USER=$_POST['systemuser'];
+			$USER= $_SESSION['ACCOUNT_ID'];
 			
 			
 			
@@ -58,8 +58,8 @@
 			$consultant->telephone	 =	$TELEPHONE;
 			$consultant->mobile =	$MOBILE ;
 			$consultant->website	=	$WEBSITE;
-			$consultant->user_account_id =	$USER;
-			$consultant->department_id=$DEPARTMENT;
+			$consultant->consultant_user_account_id =	$USER;
+			$consultant->consultant_department_id=$DEPARTMENT;
 		}
 		
 		if ($FIRSTNAME== "") {

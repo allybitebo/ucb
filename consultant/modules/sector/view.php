@@ -27,7 +27,7 @@
 					<label class="col-md-4 control-label" for="sector_name">Name: </label>
 					
 					<div class="col-md-8">
-						<input class="form-control input-sm" id="sector_id" name="sector_id" type="text" value="<?php echo $list->sector_name; ?>" readonly>
+						<input class="form-control input-sm" id="sector_id" name="sector_id" type="text" value="<?php echo $list->name; ?>" readonly>
 					</div>
 				</div>
 				

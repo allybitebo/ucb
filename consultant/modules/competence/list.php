@@ -1,6 +1,6 @@
 
 		<div class="wells">
-				<h3 align="left">List of Competences</h3>
+				<h3 align="left"><legend>List of Competence</legend></h3>
 			    <form action="controller.php?action=list" Method="POST">  					
 					<table id="example" class="table table-striped" cellspacing="0">
 				
@@ -73,7 +73,7 @@
 						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
 						   <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
 						</div>';
-					}elseif($_SESSION['ACCOUNT_TYPE']=='Officer') {
+					}elseif($_SESSION['ACCOUNT_TYPE']=='consultant') {
 						echo '
 						<div class="btn-group">
 						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>

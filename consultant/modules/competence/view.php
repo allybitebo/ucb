@@ -57,13 +57,13 @@
 					
 					<div class="col-md-8">
 					<?php
-						$sector_id = $list->sector_id;
+						$competence_sector_id = $list->competence_sector_id;
 						
 							$sector = new Sector();
-							$listSector = $sector->single_sector($sector_id);
+							$listSector = $sector->single_sector($competence_sector_id);
 						
 					?>
-						<input class="form-control input-sm" id="project_id" name="project_id" type="text" value="<?php echo $listSector->sector_name; ?>" readonly>
+						<input class="form-control input-sm" id="project_id" name="project_id" type="text" value="<?php echo $list->competence_sector_id; ?>" readonly>
 						
 					</div>
 				</div>
@@ -78,13 +78,13 @@
 					
 					<div class="col-md-8">
 					<?php
-						$domain_id = $list->domain_id;
+						$competence_domain_id = $list->competence_domain_id;
 						
 							$domain = new Domain();
-							$listdomain = $domain->single_domain($domain_id);
+							$listdomain = $domain->single_domain($competence_domain_id);
 						
 					?>
-						<input class="form-control input-sm" id="domain_id" name="domain_id" type="text" value="<?php echo $listdomain->domain_name; ?>" readonly>
+						<input class="form-control input-sm" id="domain_id" name="domain_id" type="text" value="<?php echo $list->competence_domain_id; ?>" readonly>
 						
 					</div>
 				</div>

@@ -16,19 +16,19 @@
 				  <tbody>
 				  	<?php
 						$account_username = $_SESSION['ACCOUNT_USERNAME'];
-						$account_password = $_SESSION['ACCOUNT_PASSWORD'];
+						//$account_password = $_SESSION['ACCOUNT_PASSWORD'];
 						$account_type = $_SESSION['ACCOUNT_TYPE'];
 						//echo 'username =   '. $account_username;echo " \n";
 				        //echo 'account type =   '. $account_type;
 						//echo 'password =   '. $account_password;
-						if($account_password!= Null ) {
+						if($account_username!= Null ) {
 								$sector = new Sector();
 								$sectorList = $sector->listOfSectors();
 								foreach ($sectorList as $list) {
 								echo '<tr>';
 								echo '<td width="5%" align="center"></td>';
 								echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->sector_id. '"/>';
-								echo '<td width="60%" >'. $list->sector_name.'</td>';
+								echo '<td width="60%" >'. $list->name.'</td>';
 								 echo '<td width="10%" ><a href = "index.php?view=edit&id='.$list->sector_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a></td>';
 								echo '<td><a href = "index.php?view=view&sectorId='.$list->sector_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
 								echo '</tr>';
@@ -53,30 +53,17 @@
 				  </tbody>
 				 
 				</table>
-				
-		<div class="form-group">
-			<div class="col-md-8">
-				<label class="col-md-4 control-label" for="address">New Sector:</label>
-				<div class="col-md-4" >
-					<li class="leaf"><a href="<?php echo WEB_ROOT; ?>admin/modules/sector/index.php?view=add"> Add </a></li>
-				</div>
-			</div>
-		</div>
+		
 				<?php 
-					if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
-						echo '
-						<div class="btn-group">
-						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-						   <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-						</div>';
-					}elseif($_SESSION['ACCOUNT_TYPE']=='Officer') {
-						echo '
-						<div class="btn-group">
-						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-						</div>';
-					}
-
-				?>
+						if($_SESSION['ACCOUNT_TYPE']=='consultant'){
+							echo '
+							<div class="btn-group">
+							<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  Add New sector</a>
+							</div>';
+							}else{
+							//redirect to home page
+						}
+					?>
 				</form>
 	  	</div><!--End of well-->
 

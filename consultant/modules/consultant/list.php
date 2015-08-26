@@ -1,6 +1,6 @@
 
 		<div class="wells">
-				<h3 align="left">List of Consultant</h3>
+				<h3 align="left"><legend>List of Consultants</legend></h3>
 			    <form action="controller.php?action=list" Method="POST">  					
 					<table id="example" class="table table-striped" cellspacing="0">
 				
@@ -17,9 +17,9 @@
 				  <tbody>
 				  	<?php
 						$account_username = $_SESSION['ACCOUNT_USERNAME'];
-						$account_password = $_SESSION['ACCOUNT_PASSWORD'];
+						//$account_password = $_SESSION['ACCOUNT_PASSWORD'];
 					
-						if($account_password!= Null) {
+						if($account_username!= Null) {
 			
 								$consultant = new Consultant();
 								$consultantList = $consultant->listOfconsultant();
