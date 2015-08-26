@@ -17,7 +17,7 @@
 					<thead>
 						<tr>
 							<th>No.</th>
-							<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> Domain #</th>
+							<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">Select All</th>
 							<th>Domain Name</th>
 							<th>Description</th>
 							<th>Edit</th>

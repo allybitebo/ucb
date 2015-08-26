@@ -26,7 +26,7 @@
 					<thead>
 						<tr>
 							<th>No.</th>
-							<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> Project #</th>
+							<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> Select All</th>
 							<th>Project Title</th>
 							<th>Edit </th>
 							<th>Details</th>

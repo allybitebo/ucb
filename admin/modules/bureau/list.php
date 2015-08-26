@@ -17,7 +17,7 @@
 			<thead>
 				<tr>
 					<th>No.</th>
-					<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> Bureaus #</th>
+					<th width="5%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">Select All</th>
 					<th>Bureau name</th>
 					<th>Short Name</th>
 				    <th>Edit </th>
@@ -50,8 +50,6 @@
 				?>
 			</tbody>
 		</table>
-		
-		
 		<?php 
 			if($_SESSION['ACCOUNT_TYPE']=='administrator'){
 				echo '
