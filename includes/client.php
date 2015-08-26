@@ -1,48 +1,68 @@
 <?php
 /**
-* Description:	This is a class for college.
-* Author:		Ally Bitebo
-* Date Created:	February 07, 2015
-* Revised By:		
+* Description:	This is a class for department.
+* Author:		Joken Villanueva
+* Date Created:	June 8, 2013
+* Revised By:	Ally Bitebo
+* Date edited: February, 07, 2015
 */
 require_once(LIB_PATH.DS.'database.php');
-class School{
-	protected static $tbl_name = "schools";
+class Client{
+	
+	protected static $tbl_name = "clients";
 	function db_fields(){
 		global $mydb;
 		return $mydb->getFieldsOnOneTable(self::$tbl_name);
 	}
 	
-	function find_all_school(){
-			global $mydb;
-			$mydb->setQuery("SELECT * 
-			FROM  ".self::$tbl_name."");
-			$cur = $mydb->executeQuery();
-			$row_count = $mydb->num_rows($cur);//get the number of count
-			return $row_count;
-		}
-		
-	/*function find_all_col($colname=""){
+	function find_all_client($client_name=""){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 							FROM  ".self::$tbl_name." 
-							WHERE  `school_name` ='{$colname}'");
+							WHERE  department_name ='{$department_name}'");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			return $row_count;
-	}*/
-
-	function listOfSchools(){
+	}
+	
+	function listOfClient(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 							FROM  ".self::$tbl_name);
 			$cur = $mydb->loadResultList();
 			return $cur;
 	}
+	
 
-	function single_school($id=0){
+/*--------------------------------for search functionlity ----------------------------------
+	function listOfClients(){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where school_id= {$id} LIMIT 1");
+			$mydb->setQuery("SELECT * 
+							FROM  ".self::$tbl_name);
+			$cur = $mydb->loadResultList();
+			return $cur;
+	}
+--------------------------------------------------------------------------------------------*/
+ 
+/*
+	function listOfClients(){
+		global $mydb;
+			$mydb->setQuery("SELECT client_id,firstname,lastname,user_account_id FROM `clients`");
+			$cur = $mydb->loadResultList();
+			return $cur;
+*/
+	function listOfDepartmentClient($department_id){
+			global $mydb;
+			$mydb->setQuery("SELECT * 
+							FROM  ".self::$tbl_name."
+							WHERE department_id ='{$department_id}'");
+			$cur = $mydb->loadResultList();
+			return $cur;
+	}
+
+	function single_client($id=0){
+			global $mydb;
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where client_id= {$id} LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
@@ -126,7 +146,7 @@ class School{
 		}
 		$sql = "UPDATE ".self::$tbl_name." SET ";
 		$sql .= join(", ", $attribute_pairs);
-		$sql .= " WHERE school_id=". $id;
+		$sql .= " WHERE client_id=". $id;
 	  $mydb->setQuery($sql);
 	 	if(!$mydb->executeQuery()) return false; 	
 		

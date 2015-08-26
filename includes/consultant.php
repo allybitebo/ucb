@@ -31,11 +31,10 @@ class Consultant{
 	
 	
 	
-	function find_all_consultant($consultant_name=""){
+	function find_all_consultant(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
-							FROM  ".self::$tbl_name." 
-							WHERE  department_name ='{$department_name}'");
+							FROM  ".self::$tbl_name."");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			return $row_count;

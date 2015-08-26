@@ -78,7 +78,7 @@
 		
 		static function AuthenticateAdmin($email="", $h_upass=""){
 			global $mydb;
-			$mydb->setQuery("SELECT systemusers.user_account_id,user_name,account_password,account_type FROM `systemusers` WHERE `account_type`='Administrator' and `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' LIMIT 1");
+			$mydb->setQuery("SELECT systemusers.user_account_id,user_name,account_password,account_type,user_first_name,user_last_name FROM `systemusers` WHERE `account_type`='Administrator' and `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' LIMIT 1");
 			//$mydb->setQuery("SELECT staff_id, dname, email, level, password FROM staffs JOIN users ON staff_id = user_id WHERE `staff_id`='" . $email . "' and `password`='" . $h_upass ."' LIMIT 1");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
@@ -88,7 +88,8 @@
 				$_SESSION['ACCOUNT_USERNAME']= $found_user->user_name;
 				$_SESSION['ACCOUNT_PASSWORD']= $found_user->account_password;
 				$_SESSION['ACCOUNT_TYPE']    = $found_user->account_type;
-
+				$_SESSION['ACCOUNT_FNAME']    = $found_user->user_first_name;
+				$_SESSION['ACCOUNT_LNAME']    = $found_user->user_last_name;
 				return true;
 				}else{
 				return false;
@@ -99,7 +100,7 @@
 			
 		static function AuthenticateConsultant($email="", $h_upass=""){
 			global $mydb;
-			$mydb->setQuery("SELECT systemusers.user_account_id,user_name,account_password,account_type FROM `systemusers` WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' LIMIT 1");
+			$mydb->setQuery("SELECT systemusers.user_account_id,user_name,account_password,account_type FROM `systemusers` WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' and `account_type` = 'consultant' LIMIT 1");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			if ($row_count == 1){

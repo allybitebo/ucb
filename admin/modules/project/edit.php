@@ -1,4 +1,4 @@
-<?php 	
+<div class="container">	<div class="panel panel-primary">		<div class="panel-heading">			<div class="row">				<div class="col-xs-3"><p ><strong><h5 align="left"><?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME']; ?></h5></strong></p></div>				<div class="col-xs-3"></div>				<div class="col-xs-3"></div>				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>admin/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p></div>			</div>		</div> <?php 	
 	$project = new Project();
 	$cur = $project->single_project($_GET['id']);
 ?>

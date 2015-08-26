@@ -107,7 +107,7 @@
 	
 	function doEdit(){
 		if (isset($_POST['submit'])){	
-		    //$officer_id=$_POST['officer_id'];
+		    $officer_id=$_POST['officer_id'];
 		    $FIRSTNAME = $_POST['firstname'];
 			$MIDDLENAME = $_POST['middlename'];
 			$LASTNAME = $_POST['lastname'];
@@ -123,7 +123,7 @@
 			$SCHOOL = $_POST['school'];
 			
 			$officer = new Officer();
-			//$officer->officer_id=$officer_id;
+			$officer->officer_id=$officer_id;
 			$officer->firstname	=	$FIRSTNAME;
 			$officer->middlename =	$MIDDLENAME;
 			$officer->lastname	=	$LASTNAME ;
@@ -187,9 +187,9 @@
 			*/
 			
 			
-			$officer->update($_GET['officer_id']); 
+			$officer->update($_GET['id']); 
 				message('Officer infomation updated successfully!', "info");
-				redirect('../../index.php?page=1');	
+				redirect('index.php');	
 		
 		
 	}

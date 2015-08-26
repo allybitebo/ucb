@@ -39,8 +39,7 @@
 		function find_all_project($project_name="", $course_level="",$course_major="" ){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
-			FROM  ".self::$tbl_name." 
-			WHERE  `COURSE_NAME` ='{$course_name}' AND `COURSE_LEVEL` ='{$course_level}' AND `COURSE_MAJOR` ='{$course_major}'");
+			FROM  ".self::$tbl_name."");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count
 			return $row_count;
