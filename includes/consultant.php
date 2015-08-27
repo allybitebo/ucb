@@ -1,4 +1,4 @@
-+<?php
+<?php
 /**
 * Description:	This is a class for department.
 * Author:		Joken Villanueva

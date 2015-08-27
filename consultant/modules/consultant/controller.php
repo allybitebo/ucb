@@ -105,7 +105,7 @@
 			
 			$consultant->create(); 
 			message('New consultant addedd successfully!', "success");
-			redirect('index.php?view=list');	
+			redirect('../../index.php?page=2');	
 			
 			
 		}
