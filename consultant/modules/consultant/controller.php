@@ -190,7 +190,7 @@
 			
 			$consultant->update($_GET['id']); 
 			message('Consultant information updated successfully!', "info");
-			redirect('index.php');	
+			redirect('../../index.php?page=2');	
 		}	
 	}	
 	

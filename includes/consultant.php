@@ -1,4 +1,4 @@
-<?php
++<?php
 /**
 * Description:	This is a class for department.
 * Author:		Joken Villanueva
@@ -77,7 +77,7 @@ class Consultant{
 
 	function single_consultant($id=0){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where consultant_id= {$id} LIMIT 1");
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where consultant_user_account_id= {$id} LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
