@@ -32,6 +32,7 @@
 	require_once(LIB_PATH.DS."project.php");
 	require_once(LIB_PATH.DS."sector.php");
 	require_once(LIB_PATH.DS."domain.php");
+	require_once(LIB_PATH.DS."client.php");
 	//require_once(LIB_PATH.DS."sy.php");
 	require_once(LIB_PATH.DS."instructor.php");
 	require_once(LIB_PATH.DS."instructorclasses.php");

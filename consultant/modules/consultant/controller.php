@@ -105,7 +105,7 @@
 			
 			$consultant->create(); 
 			message('New consultant addedd successfully!', "success");
-			redirect('index.php?view=list');	
+			redirect('../../index.php?page=2');	
 			
 			
 		}
@@ -190,7 +190,7 @@
 			
 			$consultant->update($_GET['id']); 
 			message('Consultant information updated successfully!', "info");
-			redirect('index.php');	
+			redirect('../../index.php?page=2');	
 		}	
 	}	
 	

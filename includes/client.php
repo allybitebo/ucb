@@ -50,12 +50,17 @@ class Client{
 			$cur = $mydb->loadResultList();
 			return $cur;
 */
-	function listOfDepartmentClient($department_id){
+	function listOfProjectClient($project_id){
 			global $mydb;
-			$mydb->setQuery("SELECT * 
-							FROM  ".self::$tbl_name."
-							WHERE department_id ='{$department_id}'");
-			$cur = $mydb->loadResultList();
+			$mydb->setQuery("SELECT `client_id`,`client_name`, `project_id` 
+							FROM ".self::$tbl_name."
+							JOIN `client_project` ON `client_id` = `clnt_proj_client_id` 
+							JOIN `projects` ON `project_id` = `clnt_proj_project_id`   
+							WHERE project_id ='{$project_id}' LIMIT 1");
+							
+							//enhance this one to use only project_id fromclient project table
+							
+			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
 
@@ -106,7 +111,7 @@ class Client{
 	  }
 	  return $clean_attributes;
 	}
-	
+
 	
 	/*--Create,Update and Delete methods--
 	public function save() {

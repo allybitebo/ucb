@@ -93,14 +93,14 @@
 						<div class="panel-heading">
 							<div class="row">
 								<div class="col-xs-9">
-									<P><strong><h5>Project sector</h5></strong></p>
+									<P><strong><h5>Edit your profile</h5></strong></p>
 								</div>
 								<div class="col-xs-3 text-right">
 								</div>
 							</div>
 						</div>
-						<a href="<?php echo WEB_ROOT; ?>consultant/modules/sector/index.php".>
-							<div class="panel-footer">
+						<a href="<?php echo WEB_ROOT; ?>consultant/modules/consultant/index.php?view=edit".>
+													<div class="panel-footer">
 								<span class="pull-left">View Details</span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 								<div class="clearfix"></div>
@@ -141,7 +141,7 @@ else {
 						<div class="panel-heading">
 							<div class="row">
 								<div class="col-xs-9">
-									<P><strong><h5>Create Profile</h5></strong></p>
+									<P><strong><h5>Edit Your Profile</h5></strong></p>
 								</div>
 								<div class="col-xs-3 text-right">
 								</div>
@@ -149,7 +149,7 @@ else {
 						</div>
 						<a href="<?php echo WEB_ROOT; ?>consultant/modules/consultant/index.php?view=add".>
 							<div class="panel-footer">
-								<li class="leaf"><a href="<?php echo WEB_ROOT; ?>consultant/modules/consultant/index.php?view=add">Create your Profile</a></li>
+								<span class="pull-left">View Details</span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 								<div class="clearfix"></div>
 							</div>

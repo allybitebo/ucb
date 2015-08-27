@@ -69,41 +69,74 @@
 			
 			$project->project_type_id=$PROJECTTYPEID;
 		}
-		/*if ($PROJECTNUMBER== "") {
-			message('Project Number is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($PROJECTNAME == "") {
-			message('Project Name is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($STARTDATE == "") {
-			message('Start Date is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($ENDDATE == "") {
-			message('End Date is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($DAYS == "") {
-			message('Days is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($STATUS == "") {
-			message('Status is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($AMOUNT == "") {
-			message('Amount is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($PROJECTSECTOR== "") {
-			message('Sector ID is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($PROJECTBUREAU== "") {
-			message('Bureau ID is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($PROJECTTYPEID== "") {
-			message('Project Type ID is required!', "error");
-			redirect ('index.php?view=add');
-			} else{*/
-			$project->create(); 
-			message('New project addedd successfully!', "success");
-			redirect('index.php?view=list');	
-		//}
+		if($_SESSION['BUREAU_ID'] != NULL){
+			
+			if ($PROJECTNUMBER== "") {
+				message('Project Number is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				}elseif ($PROJECTNAME == "") {
+				message('Project Name is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				}elseif ($STARTDATE == "") {
+				message('Start Date is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				}elseif ($ENDDATE == "") {
+				message('End Date is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				}elseif ($DAYS == "") {
+				message('Days is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				}elseif ($STATUS == "") {
+				message('Status is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				}elseif ($AMOUNT == "") {
+				message('Amount is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				}elseif ($PROJECTSECTOR== "") {
+				message('Sector ID is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				}elseif ($PROJECTTYPEID== "") {
+				message('Project Type ID is required!', "error");
+				redirect ('index.php?view=add&from=bureau');
+				} else{
+				$project->create(); 
+				message('New project addedd successfully!', "success");
+				redirect('index.php?view=list');	
+			}
+			} else {
+			if ($PROJECTNUMBER== "") {
+				message('Project Number is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				}elseif ($PROJECTNAME == "") {
+				message('Project Name is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				}elseif ($STARTDATE == "") {
+				message('Start Date is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				}elseif ($ENDDATE == "") {
+				message('End Date is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				}elseif ($DAYS == "") {
+				message('Days is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				}elseif ($STATUS == "") {
+				message('Status is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				}elseif ($AMOUNT == "") {
+				message('Amount is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				}elseif ($PROJECTSECTOR== "") {
+				message('Sector ID is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				}elseif ($PROJECTTYPEID== "") {
+				message('Project Type ID is required!', "error");
+				redirect ('index.php?view=add&from=school');
+				} else{
+				$project->create(); 
+				message('New project addedd successfully!', "success");
+				redirect('index.php?view=list');	
+			}
+		}
 	}
 	
 	function doInsertS(){
@@ -151,43 +184,43 @@
 			redirect ('index.php?view=add');
 			}elseif ($AMOUNT == "") {
 			message('Amount is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($PROJECTSECTOR== "") {
-			message('Sector ID is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($PROJECTSCHOOL == "") {
-			message('School ID is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($PROJECTTYPEID== "") {
-			message('Project Type ID is required!', "error");
-			redirect ('index.php?view=add');
-			}else{
-			$project->create(); 
-			message('New project addedd successfully!', "success");
-			redirect('index.php?view=list');	
+		redirect ('index.php?view=add');
+		}elseif ($PROJECTSECTOR== "") {
+		message('Sector ID is required!', "error");
+		redirect ('index.php?view=add');
+		}elseif ($PROJECTSCHOOL == "") {
+		message('School ID is required!', "error");
+		redirect ('index.php?view=add');
+		}elseif ($PROJECTTYPEID== "") {
+		message('Project Type ID is required!', "error");
+		redirect ('index.php?view=add');
+		}else{
+		$project->create(); 
+		message('New project addedd successfully!', "success");
+		redirect('index.php?view=list');	
 		}
-	}
-	
-	
-	function doEdit(){
+		}
+		
+		
+		function doEdit(){
 		if (isset($_POST['submit'])){
-			$PROJECTID=$_POST['projectid'];
-			$PROJECTNUMBER=$_POST['projectnumber'];
-			$NAME = $_POST['projectname'];
-			$CLIENTNAME = $_POST['clientname'];
-			$CLIENTCONTACTS = $_POST[''];
-			$PROJECTTYPEID = $_POST['projecttype'];
-			$STARTDATE= $_POST['startdate'];
-			$ENDDATE= $_POST['enddate'];
-			$DAYS= $_POST['days'];
-			$AMOUNT= $_POST['amount'];
-			$PROJECTSTATUS= $_POST['status'];
-			$SECTOR  = $_POST['sector'];
-			$BUREAU = $_POST['bureau'];
-			$SCHOOL = $_POST['school'];
-			
-			
-			$project = new Project();
+		$PROJECTID=$_POST['projectid'];
+		$PROJECTNUMBER=$_POST['projectnumber'];
+		$NAME = $_POST['projectname'];
+		$CLIENTNAME = $_POST['clientname'];
+		$CLIENTCONTACTS = $_POST[''];
+		$PROJECTTYPEID = $_POST['projecttype'];
+		$STARTDATE= $_POST['startdate'];
+		$ENDDATE= $_POST['enddate'];
+		$DAYS= $_POST['days'];
+		$AMOUNT= $_POST['amount'];
+		$PROJECTSTATUS= $_POST['status'];
+		$SECTOR  = $_POST['sector'];
+		$BUREAU = $_POST['bureau'];
+		$SCHOOL = $_POST['school'];
+		
+		
+		$project = new Project();
 		$project->project_id=$PROJECTID;
 		$project->project_number=$PROJECTNUMBER;
 		$project->project_name=$NAME;
@@ -254,4 +287,4 @@
 		}
 		}
 		
-		?>								
+		?>										
