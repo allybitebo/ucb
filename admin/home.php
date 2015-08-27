@@ -2,7 +2,7 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<div class="row">
-			<div class="col-xs-3"></div>
+			<div class="col-xs-3"> <p><span class="glyphicon glyphicon-home"></span></p></div>
 				<div class="col-xs-9">
 				<div class="col-xs-8"><p ><strong><h5 align="right"><?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME']; ?></h5></strong></p></div>
 				<div class="col-xs-4"><p align="right"><a href="<?php echo WEB_ROOT; ?>admin/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p></div>
@@ -30,6 +30,7 @@
                         <a href="<?php echo WEB_ROOT; ?>admin/modules/project/index.php?">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 								<div class="clearfix"></div>
 							</div>
 						</a>
@@ -54,6 +55,7 @@
 							<a href="<?php echo WEB_ROOT; ?>admin/modules/bureau/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</li></span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>
 						   </a>
@@ -103,6 +105,7 @@
                         <a href="<?php echo WEB_ROOT; ?>admin/modules/department/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>
 						</a>
@@ -131,6 +134,7 @@
                         <a href="<?php echo WEB_ROOT; ?>admin/modules/domain/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 								<div class="clearfix"></div>
 							</div>
 						</a>
@@ -155,6 +159,7 @@
 							<a href="<?php echo WEB_ROOT; ?>admin/modules/subject/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>
 						</a>
@@ -180,6 +185,7 @@
 							<a href="<?php echo WEB_ROOT; ?>admin/modules/client/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>
 						</a>
@@ -204,6 +210,7 @@
                         <a href="<?php echo WEB_ROOT; ?>admin/modules/systemuser/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>
 						</a>
@@ -232,6 +239,7 @@
                         <a href="<?php echo WEB_ROOT; ?>admin/modules/officer/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 								<div class="clearfix"></div>
 							</div>
 						</a>
@@ -256,6 +264,7 @@
 							<a href="<?php echo WEB_ROOT; ?>admin/modules/payment/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>
 						</a>
@@ -280,6 +289,7 @@
                         <a href="<?php echo WEB_ROOT; ?>admin/modules/school/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>
 						</a>
@@ -304,6 +314,7 @@
                         <a href="<?php echo WEB_ROOT; ?>admin/modules/sector/index.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>
 						</a>
