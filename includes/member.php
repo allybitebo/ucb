@@ -112,10 +112,18 @@
 				$_SESSION['ACCOUNT_LNAME']= $found_user->user_last_name;
 				//$_SESSION['ACCOUNT_PASSWORD'] = $found_user->account_password;
 				$_SESSION['ACCOUNT_TYPE']    = $found_user->account_type;
+				
+			global $mydb;
+			$mydb->setQuery("SELECT consultant_id FROM `consultants` WHERE `consultant_user_account_id` ='" . $_SESSION['ACCOUNT_ID'] . "' LIMIT 1");
+			$cur = $mydb->executeQuery();
+			$cur = $mydb->loadSingleResult();
+
+			$_SESSION['CONSULTANT_ID'] = $cur->consultant_id;
+				
 				return true;
 				}else{
 				return false;
-			}	
+			}
 			
 		}
 		function single_user($id=0){
