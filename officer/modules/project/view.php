@@ -11,7 +11,7 @@
 	$consultantInfos = $consultant->consultants_in_project($_GET['projectId']);
 	
 	$payment = New Payment();
-	$paymentInfos = $payment->number_installment_project($_GET['projectId']);
+	$paymentInfos = $payment->listOfProjectPayment($_GET['projectId']);
 	
 ?>
 
@@ -237,7 +237,7 @@
 						<div class="col-md-8">
 							<?php
 								foreach ($consultantInfos as $constInfo) {
-									echo '<li>'. $constInfo->displayname. '</li>';
+									echo '<li>'. $constInfo->displayname .'</li>';
 								}
 							?>
 						</div>
@@ -253,15 +253,19 @@
 				
 				<div class="form-group" id="project_id">
 					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="project_id">Project Number </label>
+						<label class="col-md-4 control-label" for="project_id">Project Payments </label>
 						
 						<div class="col-md-8">
-							<input class="form-control input-sm" id="project_id" name="project_id" type="text" value="<?php echo $list->project_number; ?>" readonly>
+							<?php
+								foreach ($paymentInfos as $installmentInfo) {
+									echo '<li> Installment number '. $installmentInfo->installment_number .'</li>';
+								}
+							?>
 						</div>
 						
 					</div>
 					
-						</div>
+				</div>
 			</center>
 			
 			<?php
