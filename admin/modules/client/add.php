@@ -13,7 +13,7 @@
 					</div>
 					<div class="col-xs-4">
 						<div class="col-xs-6">
-							<p align="left"><a href="<?php echo WEB_ROOT;?>admin/modules/bureau/index.php" class="btn btn-info btn-xsm">
+							<p align="left"><a href="<?php echo WEB_ROOT;?>admin/modules/client/index.php" class="btn btn-info btn-xsm">
 								<span class="glyphicon glyphicon-step-backward"></span>Back
 							</a
 							</p>
@@ -81,14 +81,6 @@
 					<input class="form-control input-sm" id="website" name="website" placeholder=" Website" type="text" value="">
 				</div>
 			</div> <br /><br />
-		
-			<div class="col-md-8">
-				<label class="col-md-4 control-label" for="mobile">Mobile</label>
-				
-				<div class="col-md-8">
-					<input class="form-control input-sm" id="mobile" name="mobile" placeholder=" Mobile" type="text" value="">
-				</div>
-			</div> <br /><br />
 			
 					<div class="col-md-8">
 				<label class="col-md-4 control-label" for="sector"> Sector</label>
@@ -109,18 +101,12 @@
 				</div>
 			</div>
 			<br /><br />
-			
-			
-	    
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for= "idno"></label>
                       <div class="col-md-8">
                         <button class="btn btn-default" name="submit" type="submit" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                       </div>
                     </div>
-                
-			
-		
 			</form>
 			</div>
 			</div>
