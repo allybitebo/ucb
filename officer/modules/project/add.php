@@ -125,7 +125,7 @@
 					<br /><br />
 					
 					<?php
-						/*if($projectFrom == "school"){
+						if($projectFrom == "school"){
 							echo '<div class="col-md-8">
 							<label class="col-md-4 control-label" for="pschool">Project-School</label>
 							
@@ -160,7 +160,7 @@
 							<br /><br />';
 						} else {
 							//redirect
-						}*/
+						}
 						?>
 						
 						
