@@ -150,7 +150,7 @@
 								</div>
 							</div>
 						</div>
-						<a href="<?php echo WEB_ROOT; ?>officer/modules/consultant/index.php">
+						<a href="<?php echo WEB_ROOT; ?>officer/modules/consultant/index.php?view=unitConsultant">
 							<div class="panel-footer">
 								<span class="pull-left">View Details</span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

@@ -1,6 +1,6 @@
 <?php
 require_once ("../../../includes/initialize.php");
-//checkAdmin();
+//checkOfficer();
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
 switch ($view) {
@@ -18,8 +18,8 @@ switch ($view) {
     case 'view' :
 		$content    = 'view.php';		
 		break;
-	case 'subject' :
-		$content    = 'studentsubject.php';		
+	case 'unitConsultant' :
+		$content    = 'unitConsultant.php';		
 		break;
 	case 'assign' :
 		$content    = 'assignsubj.php';		
