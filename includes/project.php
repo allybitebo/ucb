@@ -36,6 +36,25 @@
 			return $row_count;
 		}
 		
+		function ProjectsNumberByConsultant($consultant_id=0){
+			global $mydb;
+			$mydb->setQuery("SELECT `cons_proj_project_id`, `project_number`, `project_name` 
+			FROM `consultant_project` JOIN `projects` ON `cons_proj_project_id` = `project_id` 
+			WHERE `cons_proj_consultant_id` = '{$consultant_id}'");
+			$cur = $mydb->executeQuery();
+			$row_count = $mydb->num_rows($cur);//get the number of count
+			return $row_count;
+		}
+		
+		function ProjectsByConsultant($consultant_id=0){
+			global $mydb;
+			$mydb->setQuery("SELECT `cons_proj_project_id`, `project_number`, `project_name` 
+			FROM `consultant_project` JOIN `projects` ON `cons_proj_project_id` = `project_id` 
+			WHERE `cons_proj_consultant_id` = '{$consultant_id}'");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
+		
 		function find_all_project($project_name="", $course_level="",$course_major="" ){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
@@ -89,7 +108,7 @@
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 		}
-		
+				
 		/*---Instantiation of Object dynamically---*/
 		static function instantiate($record) {
 			$object = new self;

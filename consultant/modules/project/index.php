@@ -1,11 +1,11 @@
 <?php
 require_once ("../../../includes/initialize.php");
-//checkOfficer();
+//checkConsultant();
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
 switch ($view) {
 	case 'list' :
-		$content   = 'list.php';		
+		$content    = 'list.php';		
 		break;
 
 	case 'add' :
@@ -18,8 +18,8 @@ switch ($view) {
     case 'view' :
 		$content    = 'view.php';		
 		break;
-	case 'unitConsultant' :
-		$content    = 'unitConsultant.php';		
+	case 'ConsultantProject' :
+		$content    = 'ConsultantProject.php';		
 		break;
 	case 'assign' :
 		$content    = 'assignsubj.php';		
@@ -39,7 +39,7 @@ switch ($view) {
 				
 }
 
-require_once '../../theme/frontendTemplateAdmin.php';
+require_once '../../theme/frontendTemplateConsultant.php';
 ?>
 
 

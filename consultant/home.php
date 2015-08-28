@@ -1,17 +1,19 @@
 <?php
 	//require_once(LIB_PATH.DS.'database.php');
-	
 	$account_id = $_SESSION['ACCOUNT_ID'];	
 	//echo "id ". $account_id;
 	
 	global $mydb;
 	$mydb->setQuery("SELECT consultant_id FROM `consultants` WHERE `consultant_user_account_id` ='" . $account_id . "' LIMIT 1");
-	$cur = $mydb->executeQuery();
+	$cur = $mydb->executeQuery();		
 	$row_count = $mydb->num_rows($cur);//get the number of count*/
 	//echo "row ". $row_count;
 	
 	if($row_count == 1){
 		//echo "Reg";
+
+		$project = new Project();
+		$projectnum = $project->ProjectsNumberByConsultant($_SESSION['CONSULTANT_ID']);
 	?>
 	
 	
@@ -32,14 +34,15 @@
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<div class="row">
-								<div class="col-xs-9">
-									<P><strong><h5>Domain</h5></strong></p>
+								<div class="col-xs-3">
+									<P><strong><h5>Projects</h5></strong></p>
 								</div>
-								<div class="col-xs-3 text-right">
+								<div class="col-xs-9 text-right">
+									<div class="huge"><?php echo $projectnum; ?></div>
 								</div>
 							</div>
 						</div>
-						<a href="<?php echo WEB_ROOT; ?>consultant/modules/domain/index.php".>
+						<a href="<?php echo WEB_ROOT; ?>consultant/modules/project/index.php?view=ConsultantProject".>
 							<div class="panel-footer">
 								<span class="pull-left">View Details</span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
