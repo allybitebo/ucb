@@ -91,6 +91,20 @@
 		}
 		/*---Instantiation of Object dynamically---*/
 		static function instantiate($record) {
+							FROM  ".self::$tbl_name."
+							WHERE department_id ='{$department_id}'");
+			$cur = $mydb->loadResultList();
+			return $cur;
+	}
+
+	function single_consultant($id=0){
+			global $mydb;
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where consultant_user_account_id= {$id} LIMIT 1");
+			$cur = $mydb->loadSingleResult();
+			return $cur;
+	}
+	/*---Instantiation of Object dynamically---*/
+	static function instantiate($record) {
 		$object = new self;
 		
 		foreach($record as $attribute=>$value){
