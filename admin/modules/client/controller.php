@@ -28,169 +28,102 @@
 	}
 	function doInsert(){
 		if (isset($_POST['submit'])){
-			$FIRSTNAME = $_POST['firstname'];
-			$MIDDLENAME = $_POST['middlename'];
-			$LASTNAME = $_POST['lastname'];
-			$DISPLAYNAME= $_POST['displayname'];
-			$SEX   = $_POST['gender'];
-			$QUALIFICATION  = $_POST['qualify'];
-			$TITLE= $_POST['title'];
+			$CLIENTNAME = $_POST['name'];
+			$SHORTNAME = $_POST['shortname'];
+			$ADDRESS= $_POST['address'];
 			$EMAIL   = $_POST['email'];
 			$TELEPHONE= $_POST['telephone'];
-			$MOBILE = $_POST['mobile'];
 			$WEBSITE = $_POST['website'];
-			$BUREAU = $_POST['bureau'];
-			$SCHOOL = $_POST['school'];
+			$SECTOR = $_POST['sector'];
 			
-			$officer = new Officer();
-			$officer->firstname	=	$FIRSTNAME;
-			$officer->middlename =	$MIDDLENAME;
-			$officer->lastname	=	$LASTNAME ;
-			$officer->gender =	$SEX;
-			$officer->displayname	=	$DISPLAYNAME;
-			$officer->qualification	 =	$QUALIFICATION ;
-			$officer->title	 =	$TITLE;
-			$officer->email	 =	$EMAIL ;
-			$officer->telephone	 =	$TELEPHONE;
-			$officer->mobile =	$MOBILE ;
-			$officer->website	=	$WEBSITE;
-			$officer->bureau_id =	$BUREAU;
-			$officer->school_id	=	$SCHOOL;
+			
+			$client = new Client();
+			$client->client_name=$CLIENTNAME;
+			$client->client_short_name =$SHORTNAME;
+			$client->client_address = $ADDRESS;
+			$client->client_email = $EMAIL ;
+			$client->client_Telephone =	$TELEPHONE;
+			$client->client_website	= $WEBSITE;
+			$client->client_sector	= $SECTOR;
 		}
 		
-		if ($FIRSTNAME== "") {
-			message('First name is required!', "error");
+		if ($CLIENTNAME== "") {
+			message('Name is required!', "error");
 			redirect ('index.php?view=add');
-			}elseif ($LASTNAME == "") {
-			message('Last Name is required!', "error");
+			}elseif ($SHORTNAME == "") {
+			message('Short Name is required!', "error");
 			redirect ('index.php?view=add');
-			}elseif ($MIDDLENAME == "") {
-			message('Middle Name is required!', "error");
+			}elseif ($ADDRESS == "") {
+			message('Address Name is required!', "error");
 			redirect ('index.php?view=add');
-			}elseif ($SEX == "") {
-			message('Gender Name is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($DISPLAYNAME == "") {
-			message('Display name is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($QUALIFICATION == "") {
-			message('Qualification is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($TITLE == "") {
-			message('Title is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($EMAIL == "") {
-			message('Email address is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($TELEPHONE == "") {
-			message('Telephone is required!', "error");
-			redirect ('index.php?view=add');
-			}elseif ($MOBILE== "") {
-			message('Mobile is required!', "error");
+			}elseif ($SECTOR == "") {
+			message('Sector name is required!', "error");
 			redirect ('index.php?view=add');
 			}elseif ($WEBSITE == "") {
 			message('Website is required!', "error");
 			redirect ('index.php?view=add');
-			}elseif ($BUREAU== "") {
-			message('Bureau is required!', "error");
+			}elseif ($TELEPHONE == "") {
+			message('Telephone is required!', "error");
 			redirect ('index.php?view=add');
-			}elseif ($SCHOOL== "") {
-			message('School ID is required!', "error");
+			}elseif ($EMAIL == "") {
+			message('Email is required!', "error");
 			redirect ('index.php?view=add');
-			}else{
-			$officer->create(); 
-			message('New officer addedd successfully!', "success");
-			redirect('index.php?view=list');	
 		}
-		
+		$client->create(); 
+		message('New client addedd successfully!', "success");
+		redirect('index.php?view=list');
 	}
 	
 	function doEdit(){
-		if (isset($_POST['submit'])){	
-		    $officer_id=$_POST['officer_id'];
-		    $FIRSTNAME = $_POST['firstname'];
-			$MIDDLENAME = $_POST['middlename'];
-			$LASTNAME = $_POST['lastname'];
-			$DISPLAYNAME= $_POST['displayname'];
-			$SEX   = $_POST['gender'];
-			$QUALIFICATION  = $_POST['qualify'];
-			$TITLE= $_POST['title'];
+		if (isset($_POST['submit'])){
+			$CLIENT_ID= $_POST['client_id'];
+			$CLIENTNAME = $_POST['name'];
+			$SHORTNAME = $_POST['shortname'];
+			$ADDRESS= $_POST['address'];
 			$EMAIL   = $_POST['email'];
 			$TELEPHONE= $_POST['telephone'];
-			$MOBILE = $_POST['mobile'];
 			$WEBSITE = $_POST['website'];
-			$BUREAU = $_POST['bureau'];
-			$SCHOOL = $_POST['school'];
+			$SECTOR = $_POST['sector'];
 			
-			$officer = new Officer();
-			$officer->officer_id=$officer_id;
-			$officer->firstname	=	$FIRSTNAME;
-			$officer->middlename =	$MIDDLENAME;
-			$officer->lastname	=	$LASTNAME ;
-			$officer->gender =	$SEX;
-			$officer->displayname	=	$DISPLAYNAME;
-			$officer->qualification	 =	$QUALIFICATION ;
-			$officer->title	 =	$TITLE;
-			$officer->email	 =	$EMAIL ;
-			$officer->telephone	 =	$TELEPHONE;
-			$officer->mobile =	$MOBILE ;
-			$officer->website	=	$WEBSITE;
-			$officer->bureau_id =	$BUREAU;
-			$officer->school_id	=	$SCHOOL;
+			$client = new Client();
+			$client->client_id=$CLIENT_ID;
+			$client->client_name=$CLIENTNAME;
+			$client->client_short_name =$SHORTNAME;
+			$client->client_address =	$ADDRESS;
+			$client->client_email	 =	$EMAIL ;
+			$client->client_Telephone	 =	$TELEPHONE;
+			$client->client_website	=	$WEBSITE;
+			$client->client_sector	=	$SECTOR;
 		}
-		/*
-	if ($officer_id == "") {
-				message('Officer ID is required!', "error");
-				redirect ('index.php?view=edit&id='.$officer_id);
-		   elseif ($FIRSTNAME== "") {
-			message('First name is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);}
-			
-			}elseif ($LASTNAME == "") {
-			message('Last Name is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);}
-			
-			}elseif ($MIDDLENAME == "") {
-			message('Middle Name is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
-			}elseif ($SEX == "") {
-			message('Gender Name is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
-			}elseif ($DISPLAYNAME == "") {
-			message('Display name is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
-			}elseif ($QUALIFICATION == "") {
-			message('Qualification is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
-			}elseif ($TITLE == "") {
-			message('Title is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
+		
+		if ($CLIENT_ID == "") {
+			message('Client ID is required!', "error");
+			redirect ('index.php?view=edit&id='.$client_id);
+			}elseif ($CLIENTNAME== "") {
+			message('Name is required!', "error");
+			redirect ('index.php?view=edit&id='.$client_id);
+			}elseif ($SHORTNAME == "") {
+			message('Short Name is required!', "error");
+			redirect ('index.php?view=edit&id='.$client_id);
+			}elseif ($ADDRESS == "") {
+			message('Address is required!', "error");
+			redirect ('index.php?view=edit&id='.$client_id);
 			}elseif ($EMAIL == "") {
-			message('Email address is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
+			message('Email is required!', "error");
+			redirect ('index.php?view=edit&id='.$client_id);
 			}elseif ($TELEPHONE == "") {
-			message('Telephone is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
-			}elseif ($MOBILE== "") {
-			message('Mobile is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
+			message('Display name is required!', "error");
+			redirect ('index.php?view=edit&id='.$client_id);
 			}elseif ($WEBSITE == "") {
-			message('Website is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
-			}elseif ($BUREAU== "") {
-			message('Bureau is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
-			}elseif ($SCHOOL== "") {
-			message('School ID is required!', "error");
-			redirect ('index.php?view=edit&id='.$officer_id);
-			}
-			*/
-			
-			
-			$officer->update($_GET['id']); 
-				message('Officer infomation updated successfully!', "info");
-				redirect('index.php');	
-		
-		
+			message('Qualification is required!', "error");
+			redirect ('index.php?view=edit&id='.$client_id);
+			}elseif ($SECTOR == "") {
+			message('Title is required!', "error");
+			redirect ('index.php?view=edit&id='.$client_id);
+		}
+		$client->update($_GET['id']); 
+		message('Client information updated successfully!', "info");
+		redirect('index.php');
 	}
-	?>		
+
+?>		
