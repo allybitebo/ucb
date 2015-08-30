@@ -5,8 +5,15 @@
 	$list = $project->single_project($_GET['projectId']);
 	
 	$client = new Client();
-	$clientInfo = $client->listOfProjectClient($_GET['projectId']);
+	$clientCheck = $client->ProjectClientCheck($_GET['projectId']);
+	If ($clientCheck > 0)
+	{
+		$clientInfo = $client->listOfProjectClient($_GET['projectId']);
+	} else {
+		$clientInfo = "add";
+	}
 	
+
 	$consultant = new Consultant();
 	$consultantInfos = $consultant->consultants_in_project($_GET['projectId']);
 	
@@ -217,21 +224,28 @@
 							<label class="col-md-4 control-label" for="clientName">Client Name</label>
 							
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="clientName" name="clientName" type="text" value="<?php echo $clientInfo->client_name; ?>" readonly>
-							</div>
+								<?php 
+									if ($clientInfo == "add")
+									{
+										echo '<a href="index.php?view=addProjectClient&project_id='.$_GET['projectId'].'" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>Add Project Client</a>';
+										} else {
+										echo '<input class="form-control input-sm" id="clientName" name="clientName" type="text" value="'.$clientInfo->client_name.'" readonly>';
+									}
+								?>
+								</div>
 						</div>
 						
 					</div>
-				</div>
-				
-			</center>
-			
-			<fieldset>
-				<legend>Project Consultants Information</legend>
-				
-				
-				<div class="form-group" id="project_id">
-					<div class="col-md-8">
+					</div>
+					
+					</center>
+					
+					<fieldset>
+					<legend>Project Consultants Information</legend>
+					
+									
+									<div class="form-group" id="project_id">
+									<div class="col-md-8">
 						<label class="col-md-4 control-label" for="project_id">Project Consultants</label>
 						
 						<div class="col-md-8">
@@ -248,40 +262,29 @@
 			</center>
 			
 			<fieldset>
-				<legend>Project Payment Information</legend>
-				
-				
-				<div class="form-group" id="project_id">
-					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="project_id">Project Payments </label>
-						
-						<div class="col-md-8">
-							<?php
-								foreach ($paymentInfos as $installmentInfo) {
-									echo '<li> Installment number '. $installmentInfo->installment_number .'</li>';
-								}
-							?>
-						</div>
-						
-					</div>
-					
-				</div>
+			<legend>Project Payment Information</legend>
+			
+			
+			<div class="form-group" id="project_id">
+			<div class="col-md-8">
+			<label class="col-md-4 control-label" for="project_id">Project Payments </label>
+			
+			<div class="col-md-8">
+			<?php
+			foreach ($paymentInfos as $installmentInfo) {
+			echo '<li> Installment number '. $installmentInfo->installment_number .'</li>';
+			}
+			?>
+			</div>
+			
+			</div>
+			
+			</div>
 			</center>
 			
-			<?php
-				
-				/*if($_SESSION['ACCOUNT_TYPE']=='officer'){
-					echo '
-					<div class="col-md-6" align="right">
-					<button class="btn btn-primary" name="submit" type="submit" >Save</button>
-					
-					</div>';
-				}*/ 
-			?>
+			</form>
+			<!--	</div><!--End of well-->
+			</div>
+			</div><!--End of container-->
 			
-		</form>
-		<!--	</div><!--End of well-->
-		</div>
-		</div><!--End of container-->
-		
-				
+						

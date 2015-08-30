@@ -20,7 +20,7 @@
 		
 		function number_consultant_project($project_id=0){
 			global $mydb;
-			$mydb->setQuery("SELECT * 
+			$mydb->setQuery("SELECT DISTINCT(cons_proj_consultant_id) 
 			FROM consultant_project
 			WHERE cons_proj_project_id= ".$project_id);
 			$cur = $mydb->executeQuery();
@@ -33,7 +33,7 @@
 			global $mydb;
 			$mydb->setQuery("SELECT cons_proj_consultant_id, displayname 
 			FROM `consultant_project` JOIN `consultants` ON `cons_proj_consultant_id` = `consultant_id` 
-			WHERE cons_proj_project_id= '{$project_id}'");
+			WHERE cons_proj_project_id= ".$project_id);
 			$cur = $mydb->executeQuery();
 			$cur = $mydb->loadResultList();
 			return $cur;
@@ -74,7 +74,18 @@
 			$cur = $mydb->loadResultList();
 			return $cur;
 		*/
-		function listOfDepartmentConsultant($department_id){
+		function listOfProjectConsultant($project_id){
+			global $mydb;
+			$mydb->setQuery("SELECT `cons_proj_consultant_id`, `firstname`, `lastname` FROM 
+			`consultant_project` 
+			JOIN ".self::$tbl_name." 
+			ON `cons_proj_consultant_id` = `consultant_id` 
+			WHERE `cons_proj_project_id` = '{$project_id}'");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
+		
+			function listOfDepartmentConsultant($department_id){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 			FROM  ".self::$tbl_name."
