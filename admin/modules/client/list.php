@@ -13,7 +13,7 @@
 					</div>
 					<div class="col-xs-4">
 						<div class="col-xs-6">
-							<p align="left"><a href="<?php echo WEB_ROOT;?>admim/index.php?page=2" class="btn btn-info btn-xsm">
+							<p align="left"><a href="<?php echo WEB_ROOT;?>admin/index.php?page=2" class="btn btn-info btn-xsm">
 								<span class="glyphicon glyphicon-step-backward"></span>Back
 							</a
 							</p>
