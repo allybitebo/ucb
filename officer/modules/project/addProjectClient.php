@@ -48,7 +48,7 @@
 			<div class="col-md-8">
 				<label class="col-md-4 control-label" for= "clienInfo">If client is not in the list</label>
 				<div class="col-md-8">
-					<a href="index.php?view=addProjectClient&project_id='.$_GET['projectId'].'" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Add New Client</a>
+					<a href="../client/index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Add New Client</a>
 				</div>
 			</div>	
 			<br /><br /><br />
