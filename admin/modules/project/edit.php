@@ -1,4 +1,4 @@
-<div class="container">	<div class="panel panel-primary">		<div class="panel-heading">			<div class="row">				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT;?>admin/index.php?page=2" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>Home</a><p>				</div>								<div class="col-xs-9">					<div class="col-xs-8">						<p ><strong><h5 align="right">						<?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME'];?></h5></strong></p>					</div>					<div class="col-xs-4">						<div class="col-xs-6">							<p align="left"><a href="<?php echo WEB_ROOT;?>admin/modules/project/index.php" class="btn btn-info btn-xsm">								<span class="glyphicon glyphicon-step-backward"></span>Back							</a							</p>						</div>						<div class="col-xs-6">						<p align="right"><a href="<?php echo WEB_ROOT;?>admin/logout.php"						 class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p>					</div>					</div>				</div>				</div>		</div> <?php 	
+<div class="container">	<div class="panel panel-primary">		<div class="panel-heading">			<div class="row">				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT;?>admin/index.php?page=2" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a><p>				</div>								<div class="col-xs-9">					<div class="col-xs-8">						<p ><strong><h5 align="right">						<?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME'];?></h5></strong></p>					</div>					<div class="col-xs-4">						<div class="col-xs-6">							<p align="left"><a href="<?php echo WEB_ROOT;?>admin/modules/project/index.php" class="btn btn-info btn-xsm">								<span class="glyphicon glyphicon-step-backward"></span>Back							</a							</p>						</div>						<div class="col-xs-6">						<p align="right"><a href="<?php echo WEB_ROOT;?>admin/logout.php"						 class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p>					</div>					</div>				</div>				</div>		</div> <?php 	
 	$project = new Project();
 	$cur = $project->single_project($_GET['id']);
 ?>
@@ -27,30 +27,6 @@
 					
 					<div class="col-md-8">
 						<input class="form-control input-sm" id="projectname" name="projectname" type="text" placeholder="Project Name" value="<?php echo $cur->project_name; ?>">
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		
-		<div class="form-group">
-			<div class="rows">
-				<div class="col-md-8">
-					<label class="col-md-4 control-label" for="cName">Client Name </label>
-					<div class="col-md-8">
-						<input class="form-control input-sm" id="clientname" name="clientname" placeholder="Client Name" type="text" value="<?php echo $cur->client_name; ?>">
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		
-		<div class="form-group">
-			<div class="rows">
-				<div class="col-md-8">
-					<label class="col-md-4 control-label" for="cContact">Client Contacts </label>
-					<div class="col-md-8">
-						<input class="form-control input-sm" id="clientcontacts" name="clientcontacts" placeholder="Client Contact" type="text" value="<?php echo $cur->client_contacts;?>">
 					</div>
 				</div>
 				

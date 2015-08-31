@@ -3,7 +3,7 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 <div class="row">
-				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT;?>admin/index.php?page=2" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>Home</a><p>
+				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT;?>admin/index.php?page=2" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a><p>
 				</div>
 				
 				<div class="col-xs-9">
@@ -44,7 +44,7 @@
 				  <tbody>
 				  	<?php
 								$client = new Client();
-								$clientList = $client->listOfClient();
+								$clientList = $client->listOfClients();
 								foreach ($clientList as $list) {
 								echo '<td width="5%" align="center"></td>';
 								echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->client_id. '"/>';
