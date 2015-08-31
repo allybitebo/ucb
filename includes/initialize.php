@@ -34,7 +34,7 @@
 	require_once(LIB_PATH.DS."domain.php");
 	require_once(LIB_PATH.DS."client.php");
 	//require_once(LIB_PATH.DS."sy.php");
-	require_once(LIB_PATH.DS."instructor.php");
+	require_once(LIB_PATH.DS."client_project.php");
 	require_once(LIB_PATH.DS."instructorclasses.php");
 	//require_once(LIB_PATH.DS."studSubjects.php");
 	//require_once(LIB_PATH.DS."grades.php");
