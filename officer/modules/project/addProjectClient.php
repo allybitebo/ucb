@@ -1,5 +1,5 @@
 <?php
-	$projectFrom = $_GET['project_id'];
+	$_SESSION["project_id"] = $_GET['project_id'];
 ?>
 <div class="container">
 	<div class="panel panel-primary">
@@ -11,12 +11,12 @@
 				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>officer/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p></div>
 			</div>
 		</div> 
-		<form action="controller.php?action=add" class="form-horizontal well span9" method="post">
+		<form action="controller.php?action=addClient" class="form-horizontal well span9" method="post">
 			<fieldset>
 				<legend>Add Project's Client</legend>
 				
 				<div class="col-md-8">
-					<label class="col-md-4 control-label" for="psector">Project Client</label>
+					<label class="col-md-4 control-label" for="pclient">Project Client</label>
 					
 					<div class="col-md-8">
 						<select class="form-control input-sm" name="pclient" id="pclient">';
@@ -41,16 +41,17 @@
 					</div>
 				</div>	
 				<br /><br />
-				<legend>Create New Client</legend>
-				<div class="col-md-8">
-					<label class="col-md-4 control-label" for= "clienInfo">If client is not in the list</label>
-					<div class="col-md-8">
-						<a href="index.php?view=addProjectClient&project_id='.$_GET['projectId'].'" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Add New Client</a>
-					</div>
-				</div>	
-				<br /><br /><br />
 				
 			</form>
+			
+			<legend>Create New Client</legend>
+			<div class="col-md-8">
+				<label class="col-md-4 control-label" for= "clienInfo">If client is not in the list</label>
+				<div class="col-md-8">
+					<a href="index.php?view=addProjectClient&project_id='.$_GET['projectId'].'" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Add New Client</a>
+				</div>
+			</div>	
+			<br /><br /><br />
 			
 			<!--End of well-->
 			<!--End of container-->
