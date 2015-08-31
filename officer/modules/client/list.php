@@ -26,7 +26,7 @@
 				  <tbody>
 				  	<?php
 								$client = new Client();
-								$clientList = $client->listOfClient();
+								$clientList = $client->listOfClients();
 								foreach ($clientList as $list) {
 								echo '<td width="5%" align="center"></td>';
 								echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->client_id. '"/>';

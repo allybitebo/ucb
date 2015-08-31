@@ -101,7 +101,7 @@
 				} else{
 				$project->create(); 
 				message('New project addedd successfully!', "success");
-				redirect('index.php?view=list');	
+				redirect('../../index.php?page=1');	
 			}
 			} else {
 			if ($PROJECTNUMBER== "") {
@@ -134,7 +134,7 @@
 				} else{
 				$project->create(); 
 				message('New project addedd successfully!', "success");
-				redirect('index.php?view=list');	
+				redirect('../../index.php?page=1');	
 			}
 		}
 	}

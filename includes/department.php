@@ -36,7 +36,7 @@ class Department{
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 							FROM  ".self::$tbl_name."
-							WHERE school_id ='{$school_id}'");
+							WHERE department_school_id ='{$school_id}'");
 			$cur = $mydb->loadResultList();
 			return $cur;
 	}
