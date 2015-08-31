@@ -24,7 +24,7 @@ class Client{
 			return $row_count;
 	}
 	
-	function listOfClient(){
+	function listOfClients(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 							FROM  ".self::$tbl_name);
@@ -62,6 +62,20 @@ class Client{
 							
 			$cur = $mydb->loadSingleResult();
 			return $cur;
+	}
+	
+		function ProjectClientCheck($project_id){
+			global $mydb;
+			$mydb->setQuery("SELECT `client_id`,`client_name`, `project_id` 
+							FROM ".self::$tbl_name."
+							JOIN `client_project` ON `client_id` = `clnt_proj_client_id` 
+							JOIN `projects` ON `project_id` = `clnt_proj_project_id`   
+							WHERE project_id ='{$project_id}' LIMIT 1");
+							
+							//enhance this one to use only project_id fromclient project table
+			$cur = $mydb->executeQuery();
+			$row_count = $mydb->num_rows($cur);//get the number of count
+			return $row_count;
 	}
 
 	function single_client($id=0){

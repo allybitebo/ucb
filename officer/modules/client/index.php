@@ -5,11 +5,19 @@ $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
 switch ($view) {
 	case 'list' :
-		$content    = 'list.php';		
+		$content   = 'list.php';		
 		break;
 
 	case 'add' :
 		$content    = 'add.php';		
+		break;
+		
+			case 'addinbureau' :
+		$content    = 'addinbureau.php';		
+		break;
+		
+			case 'addinschool' :
+		$content    = 'addinschool.php';		
 		break;
 
 	case 'edit' :
@@ -18,11 +26,11 @@ switch ($view) {
     case 'view' :
 		$content    = 'view.php';		
 		break;
-	case 'ProjectConsultant' :
-		$content    = 'projectConsultant.php';		
+	case 'subject' :
+		$content    = 'studentsubject.php';		
 		break;
-	case 'addProjectClient' :
-		$content    = 'addProjectClient.php';		
+	case 'assign' :
+		$content    = 'assignsubj.php';		
 		break;
 	case 'delsubj' :
 		$content    = 'assignsubj.php';		
@@ -39,7 +47,7 @@ switch ($view) {
 				
 }
 
-require_once '../../theme/frontendTemplateOfficer.php';
+require_once '../../theme/frontendTemplateAdmin.php';
 ?>
 
 
