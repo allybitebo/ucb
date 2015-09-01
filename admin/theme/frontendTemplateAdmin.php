@@ -12,6 +12,7 @@ xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 	
 	<head>
+
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
@@ -167,7 +168,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 				<div class="udsm6-slogan">
 					<a href="index.html" title = "University of Dar es salaam">University Consultancy Bureau || Consultants Directory</a>
 				</div>  
-				
+
 			</header>
 			<nav class="udsm6-nav">
 				
@@ -179,10 +180,9 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 					</ul>
 					
 				</nav>
-				
-				
 				<div class="udsm6-sheet clearfix">
 					<!--<div class="panel panel-primary">-->
+					    <?php check_message(); ?>
 					 	<?php require_once $content;?>
 					<!--</div>	-->
 					
@@ -221,8 +221,11 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 </body>
 </html>
 
+	
+
+
 	<hr>
-	<footer>
+<footer>
 		<p align="center">&copy; University of Dar es Salaam - Consultancy Bureau <?php echo date('Y') ?></p>
 		<!--      <script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>-->
 		<!-- button css
@@ -305,8 +308,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 				document.getElementById('finalave').value = totalVal;
 				document.getElementById('finalave').value = Math.round((parseInt(totalVal)/4));  
 			}
-		</script>     
-		
+		</script> 
 	</footer>
 </body>
 </html>																																					
