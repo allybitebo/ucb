@@ -25,7 +25,7 @@
 	require_once(LIB_PATH.DS."session.php");
 	require_once(LIB_PATH.DS."member.php");
 	require_once(LIB_PATH.DS."consultant.php");
-	//require_once(LIB_PATH.DS."student_details.php");
+	require_once(LIB_PATH.DS."consultant_project .php");
 	//require_once(LIB_PATH.DS."student_requirements.php");
 	require_once(LIB_PATH.DS."department.php");
 	require_once(LIB_PATH.DS."school.php");
