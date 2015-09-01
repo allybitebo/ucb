@@ -89,7 +89,7 @@
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 			FROM  ".self::$tbl_name."
-			WHERE department_id ='{$department_id}'");
+			WHERE consultant_department_id ='{$department_id}'");
 			$cur = $mydb->loadResultList();
 			return $cur;
 		}

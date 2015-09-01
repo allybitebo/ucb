@@ -7,9 +7,9 @@
 		* Date revised: February 07, 2015
 	*/
 	require_once(LIB_PATH.DS.'database.php');
-	class Client_Project{
+	class Consultant_Project {
 		
-		protected static $tbl_name = "client_project";
+		protected static $tbl_name = "consultant_project";
 		function db_fields(){
 			global $mydb;
 			return $mydb->getFieldsOnOneTable(self::$tbl_name);
@@ -25,7 +25,7 @@
 			return $row_count;
 		}*/
 		
-		function listAClient($project_id=0){
+		function listConsultants($project_id=0){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 			FROM  ".self::$tbl_name." Where clnt_proj_project_id = {$project_id} LIMIT 1");
@@ -33,9 +33,9 @@
 			return $cur;
 		}
 		
-		function Client_projects($client_id=0){
+		function Consultant_projects($consultant_id=0){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name."Where clnt_proj_client_id= {$client_id}");
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name."Where clnt_proj_client_id= {$consultant_id}");
 			$cur = $mydb->executeQuery();
 			$cur = $mydb->loadResultList();
 			return $cur;
