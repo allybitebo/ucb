@@ -70,17 +70,6 @@
 					</tbody>
 					
 				</table>
-				
-				<div class="form-group">
-					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="address">New Officer:</label>
-						<div class="col-md-4" >
-							<li class="leaf"><a href="<?php echo WEB_ROOT; ?>admin/modules/officer/index.php?view=addinschool"> Add in School</a></li>
-							<li class="leaf"><a href="<?php echo WEB_ROOT; ?>admin/modules/officer/index.php?view=addinbureau"> Add in Bureau</a></li>
-						</div>
-					</div>
-				</div>
-				
 				<?php 
 					if($_SESSION['ACCOUNT_TYPE']=='administrator'){
 						echo '
@@ -96,6 +85,8 @@
 					}
 					
 				?>
+				
+				<br /><br />
 			</form>
 		</div>
 	</div>
