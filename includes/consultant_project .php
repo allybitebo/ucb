@@ -7,7 +7,7 @@
 		* Date revised: February 07, 2015
 	*/
 	require_once(LIB_PATH.DS.'database.php');
-	class Consultant_Project {
+	class Consultant_Project{
 		
 		protected static $tbl_name = "consultant_project";
 		function db_fields(){
@@ -29,8 +29,18 @@
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 			FROM  ".self::$tbl_name." Where clnt_proj_project_id = {$project_id} LIMIT 1");
-			$cur = $mydb->loadSingleResult();
+			$cur = $mydb->loadResultList();
 			return $cur;
+		}
+		
+		function checkConsultantsInProject($project_id=0){
+			global $mydb;
+			$mydb->setQuery("SELECT cons_proj_consultant_id 
+			FROM  ".self::$tbl_name." 
+			WHERE cons_proj_project_id = {$project_id} ");
+			$cur = $mydb->executeQuery();
+			$row_count = $mydb->num_rows($cur);//get the number of count
+			return $row_count;
 		}
 		
 		function Consultant_projects($consultant_id=0){
@@ -63,40 +73,40 @@
 		protected function attributes() { 
 			// return an array of attribute names and their values
 			global $mydb;
-			$attributes = array();
-			foreach($this->db_fields() as $field) {
-				if(property_exists($this, $field)) {
-					$attributes[$field] = $this->$field;
-				}
-			}
-			return $attributes;
+		$attributes = array();
+		foreach($this->db_fields() as $field) {
+		if(property_exists($this, $field)) {
+		$attributes[$field] = $this->$field;
+		}
+		}
+		return $attributes;
 		}
 		
 		protected function sanitized_attributes() {
-			global $mydb;
-			$clean_attributes = array();
-			// sanitize the values before submitting
-			// Note: does not alter the actual value of each attribute
-			foreach($this->attributes() as $key => $value){
-				$clean_attributes[$key] = $mydb->escape_value($value);
-			}
-			return $clean_attributes;
+		global $mydb;
+		$clean_attributes = array();
+		// sanitize the values before submitting
+		// Note: does not alter the actual value of each attribute
+		foreach($this->attributes() as $key => $value){
+		$clean_attributes[$key] = $mydb->escape_value($value);
+		}
+		return $clean_attributes;
 		}
 		
 		
 		/*--Create,Update and Delete methods--*/
 		public function save() {
-			// A new record won't have an id yet.
-			return isset($this->id) ? $this->update() : $this->create();
+		// A new record won't have an id yet.
+		return isset($this->id) ? $this->update() : $this->create();
 		}
 		
 		public function create() {
-			global $mydb;
-			// Don't forget your SQL syntax and good habits:
-			// - INSERT INTO table (key, key) VALUES ('value', 'value')
-			// - single-quotes around all values
-			// - escape all values to prevent SQL injection
-			$attributes = $this->sanitized_attributes();
+		global $mydb;
+		// Don't forget your SQL syntax and good habits:
+		// - INSERT INTO table (key, key) VALUES ('value', 'value')
+		// - single-quotes around all values
+		// - escape all values to prevent SQL injection
+		$attributes = $this->sanitized_attributes();
 		$sql = "INSERT INTO ".self::$tbl_name." (";
 		$sql .= join(", ", array_keys($attributes));
 		$sql .= ") VALUES ('";
@@ -140,4 +150,4 @@
 		
 		
 		}
-		?>		
+		?>				

@@ -24,8 +24,8 @@ switch ($view) {
 	case 'addProjectClient' :
 		$content    = 'addProjectClient.php';		
 		break;
-	case 'delsubj' :
-		$content    = 'assignsubj.php';		
+	case 'addProjectConsultant' :
+		$content    = 'addProjectConsultant.php';		
 		break;
 	case 'enroll' :
 		$content    = 'enrollment.php';		
