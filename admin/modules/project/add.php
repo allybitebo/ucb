@@ -46,23 +46,6 @@
 					<br />
 					<br />
 					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="clientname">Client Name</label>
-						
-						<div class="col-md-8">
-							<input class="form-control input-sm" id="clientname" name="clientname" placeholder="Client Name" type="text" value="">
-						</div>
-					</div> 
-					<br />
-					<br />
-					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="clientcontact">Client Contacts</label>
-						<div class="col-md-8">
-							<input class="form-control input-sm" id="clientcontacts" name="clientcontacts" placeholder="Client Contact" type="text" value="">
-						</div>
-					</div>
-					<br />
-					<br />
-					<div class="col-md-8">
 						<label class="col-md-4 control-label" for="sday">Start Date</label>
 						<div class="col-md-8">
 							<div class="input-group date form_curdate col-md-15" data-date="" data-date-format="yyyy-mm-dd" data-link-field="any" data-link-format="yyyy-mm-dd">
@@ -148,7 +131,7 @@
 									$sector = new Sector();
 									$cur = $sector->listOfSectors();	
 									foreach ($cur as $sector) {
-										echo '<option value="'. $sector->sector_id.'">'. $sector->sector_name .'</option>';
+										echo '<option value="'. $sector->sector_id.'">'. $sector->name .'</option>';
 									}
 								?>
 								
