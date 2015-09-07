@@ -62,10 +62,10 @@
 					</div> <br /><br />
 					
 					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="school">Client Sector</label>
+						<label class="col-md-4 control-label" for="csector">Client Sector</label>
 						
 						<div class="col-md-8">
-							<select class="form-control input-sm" name="school" id="school">
+							<select class="form-control input-sm" name="csector" id="csector">
 								<?php
 									$sector = new Sector();
 									$cur = $sector->listOfSectors();	

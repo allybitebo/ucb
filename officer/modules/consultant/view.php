@@ -33,31 +33,6 @@
 				<fieldset>
 					<legend>Consultant Information</legend>
 					
-					
-					<div class="form-group" id="consultant_id">
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="consultant_id">Consultant Number </label>
-							
-							<div class="col-md-8">
-								<input class="form-control input-sm" id="consultant_id" name="consultant_id" type="text" value="<?php echo $list->consultant_id; ?>" readonly>
-							</div>
-							
-						</div>
-						
-					</div>
-					
-					<div class="form-group" id="consultant_id">
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="userconsultant_id">User Account Id </label>
-							
-							<div class="col-md-8">
-								<input class="form-control input-sm" id="userconsultant_id" name="userconsultant_id" type="text" value="<?php echo $list->user_account_id; ?>" readonly>
-							</div>
-							
-						</div>
-						
-					</div>
-					
 					<div class="form-group">
 						<div class="rows">
 							<div class="col-md-8">
@@ -161,7 +136,7 @@
 								
 								<div class="col-md-8">
 									<?php
-										$department_id = $list->department_id;
+										$department_id = $list->consultant_department_id;
 										
 										$department = new Department();
 										$listDepartment = $department->single_department($department_id);

@@ -37,7 +37,7 @@
 								<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">consultant #</th>
 								<th>First Name</th>
 								<th>Last Name</th>
-								<th>Edit</th>
+								<!--<th>Edit</th>-->
 								<th>Details</th>
 							</tr>	
 						</thead>
@@ -56,7 +56,7 @@
 									echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->cons_proj_consultant_id. '"/>';
 									echo '<td width="30%" >'. $list->firstname.'</td>';
 									echo '<td width="30%" >'. $list->lastname.'</td>';
-									echo '<td width="10%" ><a href = "index.php?view=edit&id='.$list->cons_proj_consultant_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a></td>';
+									//echo '<td width="10%" ><a href = "index.php?view=edit&id='.$list->cons_proj_consultant_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a></td>';
 									echo '<td><a href = "index.php?view=view&consultantId='.$list->cons_proj_consultant_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
 									echo '</tr>';
 								}

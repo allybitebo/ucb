@@ -21,8 +21,8 @@
 		case 'addClient' :
 		doAddClient();
 		break;
-		case 'delsubj' :
-		doDelsubj();
+		case 'addConsultant' :
+		doAddConsultant();
 		break;
 		case 'enroll' :
 		doEnroll();
@@ -149,15 +149,47 @@
 			$client_project->clnt_proj_project_id = $PROJECTID;
 		}
 		if ($PROJECTID== "") {
-			message('Project Number is required!', "error");
+			message('Project Name is required!', "error");
 			redirect ('index.php?view=add');
 			}elseif ($CLIENTID == "") {
-			message('Project Name is required!', "error");
+			message('Client Name is required!', "error");
 			redirect ('index.php?view=add');
 			}else{
 			$client_project->create(); 
 			message('A client was addedd successfully!', "success");
-			redirect('../../index.php?page=1');	
+			if($_SESSION['BUREAU_ID'] != NULL){
+				
+				redirect("index.php?view=view&projectId=$PROJECTID&from=bureau");
+				} else {
+				redirect("index.php?view=view&projectId=$PROJECTID&from=school");
+			}
+		}
+	}
+	
+		function doAddConsultant(){
+		if (isset($_POST['save'])){
+			$PROJECTID = $_SESSION["project_id"];
+			$CONSULTANTID = $_POST['pconsultant'];
+			
+			$client_project = new Consultant_Project();
+			$client_project->cons_proj_consultant_id = $CONSULTANTID;
+			$client_project->cons_proj_project_id = $PROJECTID;
+		}
+		if ($PROJECTID== "") {
+			message('Project Name is required!', "error");
+			redirect ('index.php?view=add');
+			}elseif ($CONSULTANTID == "") {
+			message('Consultant Name is required!', "error");
+			redirect ('index.php?view=add');
+			}else{
+			$client_project->create(); 
+			message('A Consultant was addedd successfully!', "success");
+			if($_SESSION['BUREAU_ID'] != NULL){
+				
+				redirect("index.php?view=view&projectId=$PROJECTID&from=bureau");
+				} else {
+				redirect("index.php?view=view&projectId=$PROJECTID&from=school");
+			}
 		}
 	}
 	

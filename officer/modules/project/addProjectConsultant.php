@@ -11,20 +11,20 @@
 				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>officer/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p></div>
 			</div>
 		</div> 
-		<form action="controller.php?action=addClient" class="form-horizontal well span9" method="post">
+		<form action="controller.php?action=addConsultant" class="form-horizontal well span9" method="post">
 			<fieldset>
-				<legend>Add Project's Client</legend>
+				<legend>Add Project's Consultant</legend>
 				
 				<div class="col-md-8">
-					<label class="col-md-4 control-label" for="pclient">Project Client</label>
+					<label class="col-md-4 control-label" for="pconsultant">Project Consultant</label>
 					
 					<div class="col-md-8">
-						<select class="form-control input-sm" name="pclient" id="pclient">';
+						<select class="form-control input-sm" name="pconsultant" id="pconsultant">';
 							<?php
-								$client = new Client();
-								$cur = $client->listOfClients();	
-								foreach ($cur as $client) {
-									echo '<option value="'. $client->client_id.'">'. $client->client_name .'</option>';
+								$consultant = new Consultant();
+								$cur = $consultant->listOfConsultant();	
+								foreach ($cur as $consultant) {
+									echo '<option value="'. $consultant->consultant_id.'">'. $consultant->displayname .'</option>';
 								}
 							?>
 							
@@ -40,15 +40,15 @@
 						<button class="btn btn-default" name="save" type="submit" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
 					</div>
 				</div>	
-				<br /><br />
+				<br /><br /><br />
 				
 			</form>
 			
-			<legend>Create New Client</legend>
+			<legend>Create New Consultant</legend>
 			<div class="col-md-8">
-				<label class="col-md-4 control-label" for= "clienInfo">If client is not in the list</label>
-				<div class="col-md-8">
-					<a href="../client/index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Add New Client</a>
+				<label class="col-md-6 control-label" for= "clienInfo">If consultant is not in the list</label>
+				<div class="col-md-6">
+					<a href="../client/index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Add New Consultant</a>
 				</div>
 			</div>	
 			<br /><br /><br />
