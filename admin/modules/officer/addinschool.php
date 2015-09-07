@@ -95,7 +95,7 @@
 								<label class="col-md-4 control-label" for="email">Email</label>
 								
 								<div class="col-md-8">
-									<input class="form-control input-sm" id="email" name="email" placeholder="email" type="text" value="">
+									<input class="form-control input-sm" id="email" name="email" placeholder="Email" type="email" value="">
 								</div>
 							</div> <br /><br />
 							
@@ -122,10 +122,6 @@
 									<input class="form-control input-sm" id="website" name="website" placeholder="Website" type="text" value="">
 								</div>
 							</div> <br /><br />
-							
-							
-							
-							
 							<div class="col-md-8">
 								<label class="col-md-4 control-label" for="school">School</label>
 								<div class="col-md-8">

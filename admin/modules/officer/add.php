@@ -45,7 +45,7 @@
 								</div>
 								<a href="<?php echo WEB_ROOT; ?>admin/modules/officer/index.php?view=addinschool">
 								<div class="panel-footer">
-									<span class="pull-left">Details</span>
+									<span class="pull-left">New Officer</span>
 									<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
@@ -66,7 +66,7 @@
 								</div>
 								<a href="<?php echo WEB_ROOT; ?>admin/modules/officer/index.php?view=addinbureau">
 								<div class="panel-footer">
-								<span class="pull-left">Details</li></span>
+								<span class="pull-left">New officer</li></span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
 							</div>

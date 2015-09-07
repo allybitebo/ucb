@@ -25,231 +25,198 @@
 						</div>
 					</div>
 				</div>
-		</div> 
-		<?php 
-			$officer = new Officer();
-			$list = $officer->single_officer($_GET['officerId']);
-		?>
-		<form class="form-horizontal well span9" action="controller.php?action=edit&id=<?php echo $list->officer_id; ?>" method="POST">
-			
-			<fieldset>
-				<legend>Officer Information</legend>
-				
-				
-				<div class="form-group" id="officer_id">
-					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="officer_id">Officer Number </label>
-						
-						<div class="col-md-8">
-							<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->officer_id; ?>" readonly>
-						</div>
-						
-					</div>
+				</div> 
+				<?php 
+					$officer = new Officer();
+					$list = $officer->single_officer($_GET['officerId']);
+				?>
+				<form class="form-horizontal well span9" action="controller.php?action=edit&id=<?php echo $list->officer_id; ?>" method="POST">
 					
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
+					<fieldset>
+						<legend>Officer Information</legend>
+						
 						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="officer_name">First Name: </label>
+							<label class="col-md-4 control-label" for="officer_id">Officer Number </label>
 							
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->firstname; ?>" readonly>
+								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->officer_id; ?>" readonly>
 							</div>
 						</div>
-						
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="cName">Middle Name </label>
-							
+						<br />
+						<br />
+						<div class="rows">
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->middlename; ?>" readonly>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="lname">Last Name </label>
-							
-							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->lastname; ?>" readonly>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="dname">Dispaly Name</label>
-							
-							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->displayname; ?>" readonly>
+								<label class="col-md-4 control-label" for="officer_name">First Name: </label>
 								
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->firstname; ?>" readonly>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="gend">Gender</label>
-							
+						<br />
+						<br />
+						<div class="rows">
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->gender; ?>" readonly>
+								<label class="col-md-4 control-label" for="cName">Middle Name </label>
 								
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->middlename; ?>" readonly>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="qualify">Qualification</label>
-							
+						<br />
+						<br />
+						<div class="rows">
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->qualification; ?>" readonly>
+								<label class="col-md-4 control-label" for="lname">Last Name </label>
 								
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->lastname; ?>" readonly>
+								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="title">Title</label>
 							
+						</div>
+						<br />
+						<br />
+						<div class="rows">
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->title; ?>" readonly>
+								<label class="col-md-4 control-label" for="dname">Dispaly Name</label>
 								
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="email">Email</label>
-							
-							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->email; ?>" readonly>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="website">Website</label>
-							
-							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->website; ?>" readonly>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="bureau">Bureau</label>
-							
-							<div class="col-md-8">
-								<?php
-									$bureauId=$list->bureau_id;
-									$bureau = new Bureau();
-									$listBureau = $bureau->single_bureau($bureauId);
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->displayname; ?>" readonly>
 									
-								?>
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $listBureau->name; ?>" readonly>	
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="school">School</label>
-							
+						<br />
+						<br />
+						<div class="rows">
 							<div class="col-md-8">
-								
-								<?php
-									$listSchool=$list->school_id;
-									$school = new School();
-									$listSchool= $school->single_school($listSchool);
+								<label class="col-md-4 control-label" for="gend">Gender</label>
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->gender; ?>" readonly>
 									
-								?>
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $listSchool->name; ?>" readonly>
-								
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="mobile">Mobile</label>
-							
+						<br />
+						<br />
+						<div class="rows">
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->mobile; ?>" readonly>
+								<label class="col-md-4 control-label" for="qualify">Qualification</label>
 								
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->qualification; ?>" readonly>
+									
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="rows">
-						
-						<div class="col-md-8">
-							<label class="col-md-4 control-label" for="telephone">Telephone</label>
-							
+						<br />
+						<br />
+						<div class="rows">
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->telephone; ?>" readonly>
+								<label class="col-md-4 control-label" for="title">Title</label>
 								
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->title; ?>" readonly>
+									
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				
-			</center>
-			
-			<?php
-				if($_SESSION['ACCOUNT_TYPE']=='officer'){
-					echo '
-					<div class="col-md-6" align="right">
-					<button class="btn btn-primary" name="submit" type="submit" >Save</button>
+						<br />
+						<br />
+						<div class="rows">
+							<div class="col-md-8">
+								<label class="col-md-4 control-label" for="email">Email</label>
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="email" name="email" type="email" value="<?php echo $list->email; ?>" readonly>
+								</div>
+							</div>
+						</div>
+						<br />
+						<br />
+						<div class="rows">
+							<div class="col-md-8">
+								<label class="col-md-4 control-label" for="website">Website</label>
+								
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->website; ?>" readonly>
+									
+								</div>
+							</div>
+						</div>
+						<br />
+						<br />
+						
+						<?php
+						if(!$list->officer_bureau_id==""){
+						echo '<div class="rows">
+							<div class="col-md-8">
+								<label class="col-md-4 control-label" for="bureau">Bureau</label>
+								<div class="col-md-8">';
+								
+										$bureauId=$list->officer_bureau_id;
+										$bureau = new Bureau();
+										$listBureau = $bureau->single_bureau($bureauId);
+										
+							echo '<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="'.$listBureau->name.'" readonly>
+							</div>
+							</div>
+						</div>
+						<br />
+						<br />';
+						}else{
+						echo'<div class="rows">
+							<div class="col-md-8">
+								<label class="col-md-4 control-label" for="school">School</label>
+								<div class="col-md-8">';
+								
+										$listSchool=$list->officer_school_id;
+										$school = new School();
+										$listSchool= $school->single_school($listSchool);
+										
+								echo'<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="'.$listSchool->name.'" readonly>';
+								echo'</div>
+							</div>
+						</div>
+						<br />
+						<br />';
+						}
+						?>
+						<div class="rows">
+							<div class="col-md-8">
+								<label class="col-md-4 control-label" for="mobile">Mobile</label>
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->mobile; ?>" readonly>
+								</div>
+							</div>
+						</div>
+						<br />
+						<br />
+						<div class="rows">
+							<div class="col-md-8">
+								<label class="col-md-4 control-label" for="telephone">Telephone</label>
+								<div class="col-md-8">
+									<input class="form-control input-sm" id="officer_id" name="officer_id" type="text" value="<?php echo $list->telephone; ?>" readonly>
+									
+								</div>
+							</div>
+						</div>
+						<br />
+						<br />
+					</center>
 					
-					</div>';
-				} ?>
-	</div>
-</div>
-</form>
-</div>
-
+					<?php
+						if($_SESSION['ACCOUNT_TYPE']=='officer'){
+							echo '
+							<div class="col-md-6" align="right">
+							<button class="btn btn-primary" name="submit" type="submit" >Save</button>
+							
+							</div>';
+						} ?>
+						</div>
+						</div>
+						</form>
+						</div>
+						
+												
