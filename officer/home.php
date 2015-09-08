@@ -196,7 +196,7 @@
 								</div>
 							</div>
 						</div>
-						<a href="#">
+						<a href="<?php echo WEB_ROOT; ?>officer/modules/payment/index.php?view=unitPaymentProject&checkPay=<?php echo $totalInst; ?>">
 							<div class="panel-footer">
 								<span class="pull-left">View Details</span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

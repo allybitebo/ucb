@@ -33,7 +33,7 @@
 	require_once(LIB_PATH.DS."sector.php");
 	require_once(LIB_PATH.DS."domain.php");
 	require_once(LIB_PATH.DS."client.php");
-	//require_once(LIB_PATH.DS."sy.php");
+	require_once(LIB_PATH.DS."payment.php");
 	require_once(LIB_PATH.DS."client_project.php");
 	require_once(LIB_PATH.DS."instructorclasses.php");
 	//require_once(LIB_PATH.DS."studSubjects.php");
