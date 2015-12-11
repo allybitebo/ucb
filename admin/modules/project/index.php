@@ -4,6 +4,9 @@
 	$view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 	
 	switch ($view) {
+		case 'list' :
+		$content    = 'list.php';		
+		break;
 		
 		case 'listSchProj' :
 		$content    = 'listProSchool.php';		
@@ -32,21 +35,20 @@
 		case 'delsubj' :
 		$content    = 'assignsubj.php';		
 		break;
-	case 'enroll' :
-	$content    = 'enrollment.php';		
-	break;
-	case 'editenrollment' :
-	$content    = 'editenrollment.php';		
-	break;
-	
-	default :
-	$content    = 'list.php';
-	
+		case 'enroll' :
+		$content    = 'enrollment.php';		
+		break;
+		case 'editenrollment' :
+		$content    = 'editenrollment.php';		
+		break;
+		
+		default :
+		$content    = 'list.php';
+		
 	}
 	
 	require_once '../../theme/frontendTemplateAdmin.php';
-	?>
-	
-	
-	
-		
+?>
+
+
+
