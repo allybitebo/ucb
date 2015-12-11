@@ -2,8 +2,8 @@
 	require_once("includes/initialize.php");
 	//total number of corses available
 	/*$mydb->setQuery("SELECT  `course_id` 
-	FROM  `courses`");
-	$cur = $mydb->executeQuery();
+		FROM  `courses`");
+		$cur = $mydb->executeQuery();
 	$total_courses = $mydb->num_rows($cur);*/
 	
 	//end of total courses query
@@ -25,8 +25,8 @@
 		break;
 		
 		case '4' :
-	    $title="subject";	
- 		$content ='studentsubject.php';		
+	    $title= $_GET['school_name'];	
+		$content ='SchoolProject.php';
 		break;
 		
 		case '5' :
@@ -38,19 +38,25 @@
 	    $title="Location";	
 		$content ='sitemap.php';
 		break;
+		
+		case '8' :
+		$title= $_GET['bureau_name'];	
+		$content='../../../bureau.php';		
+		break;
+		
 		default :
 		$title="Consultant Directory";	
 		$content ='home.php';
 		/*if ($total_courses == 0){
 			$title= $total_courses. "NO COURSES AVAILABLE - PLEASE VISIT AGAIN LATER";	
 			$content ='courselist.php';	
-		}elseif ($total_courses == 1){
+			}elseif ($total_courses == 1){
 			$title= $total_courses. "  COURSE";	
 			$content ='courselist.php';
-		}else
-	    $title= $total_courses. "  COURSES";	
+			}else
+			$title= $total_courses. "  COURSES";	
 		$content ='courselist.php';		*/
 	}
-	
-	require_once 'theme/frontendTemplate.php';
-	?>
+
+require_once 'theme/frontendTemplate.php';
+?>

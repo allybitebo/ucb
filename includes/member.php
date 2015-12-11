@@ -55,7 +55,8 @@
 		
 		static function AuthenticateOfficer($email="", $h_upass=""){
 			global $mydb;
-			$mydb->setQuery("SELECT systemusers.user_account_id,user_first_name, user_last_name,user_name,account_password,account_type, officer_id, officer_bureau_id, officer_school_id FROM `systemusers` JOIN officers ON systemusers.user_account_id = officer_user_account_id WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' and `account_type`='officer' LIMIT 1");
+			$mydb->setQuery("SELECT systemusers.user_account_id,user_first_name, user_last_name,user_name,account_password,account_type FROM `systemusers` WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' and `account_type`='officer' LIMIT 1");
+			//$mydb->setQuery("SELECT systemusers.user_account_id,user_first_name, user_last_name,user_name,account_password,account_type, officer_id, officer_bureau_id, officer_school_id FROM `systemusers` JOIN officers ON systemusers.user_account_id = officer_user_account_id WHERE `user_name`='" . $email . "' and `account_password`='" . $h_upass ."' and `account_type`='officer' LIMIT 1");
 			//$mydb->setQuery("SELECT staff_id, dname, email, level, password FROM staffs JOIN users ON staff_id = user_id WHERE `staff_id`='" . $email . "' and `password`='" . $h_upass ."' LIMIT 1");
 			$cur = $mydb->executeQuery();
 			$row_count = $mydb->num_rows($cur);//get the number of count

@@ -169,6 +169,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 						<li class="leaf"><a href="<?php echo WEB_ROOT; ?>consultant/login.php" title="">Consultant Resources</a></li>
 						<li class="leaf"><a href="<?php echo WEB_ROOT; ?>officer/login.php" title="">Reporting Tool</a></li>
 						<li class="leaf"><a href="<?php echo WEB_ROOT; ?>admin/login.php" title="">Administrator</a></li>
+						<li class="leaf"><a href="<?php echo WEB_ROOT; ?>admin/login.php" title="">Contacts</a></li>
 					</ul>
 					
 				</nav>
@@ -293,7 +294,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 										<p class="list-group-item active"><strong>Browse Consultants Directory</strong></p>
 										<div id='cssmenu'>
 											<ul>
-												<li class='active'><a href='#'><span>Our Consultants</span></a></li>
+												<li class='active'><a href="<?php echo WEB_ROOT; ?>admin/modules/consultant/index.php">
+                                                <span>Our Consultants</span></a></li>
 												<li><a href='#'><span>Find a Consultant</span></a></li>
 												<li><a href='#'><span>Projects</span></a></li>
 												<li><a href='#'><span>Bureaus</span></a></li>
@@ -305,7 +307,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 									
 								</div>
 							</div>
-							<div class="col-lg-8 col-md-8 col-sm-8">
+						<div class="col-lg-8 col-md-8 col-sm-8">
 								
 								<div class="panel panel-primary">
 									<br />
