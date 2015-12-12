@@ -7,7 +7,10 @@ switch ($view) {
 	case 'list' :
 		$content    = 'list.php';		
 		break;
-
+	case 'listSchDep' :
+		$content    = 'listDepSchool.php';		
+		break;
+		
 	case 'add' :
 		$content    = 'add.php';		
 		break;
