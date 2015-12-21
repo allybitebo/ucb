@@ -2,76 +2,70 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<div class="row">
-				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT;?>admin/index.php?page=2" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a><p>
-				</div>
-				
+			<div class="col-xs-3"> <p><span class="glyphicon glyphicon-home"></span></p></div>
 				<div class="col-xs-9">
-					<div class="col-xs-8">
-						<p ><strong><h5 align="right">
-						<?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME'];?></h5></strong></p>
-					</div>
-					<div class="col-xs-4">
-						<div class="col-xs-6">
-							<p align="left"><a href="<?php echo WEB_ROOT;?>admin/index.php?page=2" class="btn btn-info btn-xsm">
-								<span class="glyphicon glyphicon-step-backward"></span>Back
-								</a
-								</p>
-							</div>
-							<div class="col-xs-6">
-								<p align="right"><a href="<?php echo WEB_ROOT;?>admin/logout.php"
-								class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p>
+				<div class="col-xs-8"><p ><strong><h5 align="right"><?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME']; ?></h5></strong></p></div>
+				<div class="col-xs-4"><p align="right"><a href="<?php echo WEB_ROOT; ?>admin/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p></div>
+			</div>
+			</div>
+		</div>  
+		<div class="panel-body" >			
+			<div class="row">
+                 <div class="col-lg-6 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <P><strong><h5>Consultants</h5></strong></p>
+								</div>
+                                <div class="col-xs-9 text-right">
+								<?php
+									$consultant = new Consultant();
+									$consultantnum = $consultant->find_all_consultant();
+									?>
+                                    <div class="huge"><?php echo $consultantnum; ?></div>	
+								</div>
 							</div>
 						</div>
+                        <a href="<?php echo WEB_ROOT; ?>admin/modules/consultant/index.php?view=listOfConsultants">
+                            <div class="panel-footer">
+                                <span class="pull-left">Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+							</div>
+						</a>
 					</div>
 				</div>
-		</div>  
-		<div class="wells">
-			<h3 align="left">List of User</h3>
-			<form action="controller.php?action=list" Method="POST">  					
-				<table id="example" class="table table-striped" cellspacing="0">
-					
-					<thead>
-						<tr>
-							<th>No.</th>
-							<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> Select All</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Edit</th>
-							<th>Details</th>
-						</tr>	
-					</thead>
-					<tbody>
-						<?php
-							$user = new User();
-							$userList = $user->listOfUsers();
-							foreach ($userList as $list) {
-								echo '<td width="5%" align="center"></td>';
-								echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->user_account_id. '"/>';
-								echo '<td width="30%" >'. $list->user_first_name.'</td>';
-								echo '<td width="30%" >'. $list->user_last_name.'</td>';
-								echo '<td width="10%" ><a href = "index.php?view=edit&id='.$list->user_account_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a></td>';
-								echo '<td><a href = "index.php?view=view&userId='.$list->user_account_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
-								echo '</tr>';
-							}	
-						?>	
-					</tbody>
-				</table>
-				<div class="form-group">
-				<?php 
-					if($_SESSION['ACCOUNT_TYPE']=='administrator'){
-						echo '
-						<div class="btn-group">
-						<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-						<button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-						</div>';
-						}elseif($_SESSION['ACCOUNT_TYPE']=='Officer') {
-						echo '
-						<div class="btn-group">
-						<a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-						</div>';
-					}	
-				?>
+                <div class="col-lg-6 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <P><strong><h5>Officers</h5></strong></p>
+								</div>
+                                <div class="col-xs-9 text-right">
+									<?php
+									$officer = new Officer();
+									$officernum = $officer->find_all_officer();
+									?>
+                                    <div class="huge"><?php echo $officernum; ?></div>
+								</div>
+							</div>
+						</div>
+                        <a href="<?php echo WEB_ROOT; ?>admin/modules/officer/index.php">
+                            <div class="panel-footer">
+                                <span class="pull-left">Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
 			</div>
-		</form>
-	</div><!--End of well-->
-</div><!--End of container-->
+		</div>
+			</div>
+		</div>		
+	</div>                    
+</div>                     
+
+
