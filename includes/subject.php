@@ -37,6 +37,19 @@ class Subject{
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
+	
+	/*---shio added this---*/
+	/*--Dispaly subjects from each domain---*/
+	
+	function subjectFromDomain($domain_id){
+			global $mydb;
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where subject_domain_id='{$domain_id}'");
+			$cur = $mydb->loadResultList();
+			return $cur;
+	}
+	/*---End of shio added this---*/
+	
+	
 	/*---Instantiation of Object dynamically---*/
 	static function instantiate($record) {
 		$object = new self;
