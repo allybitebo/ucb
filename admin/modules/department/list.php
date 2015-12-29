@@ -27,8 +27,12 @@
 				</div>
 		</div>
 		<div class="row">
-		
-			<div class="col-lg-10 col-md-10 col-sm-10">
+			<div class="col-lg-4 col-md-4 col-sm-4">
+			<div class="panel panel-primary"><br>
+			<div class="panel-heading"><h5><strong>Addition</strong></h5></div>
+		     </div>
+			 </div>
+			<div class="col-lg-8 col-md-8 col-sm-8">
 				
 				<div class="panel panel-primary">
 					<br />
@@ -36,8 +40,7 @@
 					<?php require_once("school.php"); ?>
 					
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-2">
-		</div>
+		
 			</div>
 		
 		</div>
