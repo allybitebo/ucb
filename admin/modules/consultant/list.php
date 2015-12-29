@@ -25,53 +25,21 @@
 				</div>
 				</div>
 		</div> 
-		<div class="wells">
-				<h3 align="left">List of Consultant</h3>
-			    <form action="controller.php?action=list" Method="POST">  					
-					<table id="example" class="table table-striped" cellspacing="0">
-				  <thead>
-				  	<tr>
-				  		<th>No.</th>
-				  		<th width="15%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">Select All</th>
-						 <th>First Name</th>
-                         <th>Last Name</th>
-						 <th>Edit</th>
-				  		<th>Details</th>
-				  	</tr>	
-				  </thead>
-				  <tbody>
-				  	<?php
-								$consultant = new Consultant();
-								$consultantList = $consultant->listOfconsultant();
-								foreach ($consultantList as $list) {
-								echo '<td width="5%" align="center"></td>';
-								echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->consultant_id. '"/>';
-								echo '<td width="30%" >'. $list->firstname.'</td>';
-								echo '<td width="30%" >'. $list->lastname.'</td>';
-								echo '<td width="10%" ><a href = "index.php?view=edit&id='.$list->consultant_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a></td>';
-								echo '<td><a href = "index.php?view=view&consultantId='.$list->consultant_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
-								echo '</tr>';
-								}
-				  	?>
-				  </tbody>
-				</table>
-				<?php 
-					if($_SESSION['ACCOUNT_TYPE']=='administrator'){
-						echo '
-						<div class="btn-group">
-						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-						   <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-						</div>';
-					}elseif($_SESSION['ACCOUNT_TYPE']=='consultant') {
-						echo '
-						<div class="btn-group">
-						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
-						</div>';
-					}
-				?>
-				<br />
-				<br />
-				</form>
-	  	</div><!--End of well-->
-
-</div><!--End of container-->
+		<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+			<div class="panel panel-primary"><br>
+			<div class="panel-heading"><h5><strong>Addition</strong></h5></div>
+		     </div>
+			 </div>
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				<div class="panel panel-primary">
+					<br />
+					<div class="panel-heading"><h5><strong>Schools</strong></h5></div>
+					<?php require_once("school.php"); ?>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2"></div>
+			</div>
+		
+		</div>			
+		</div>
+		</div>

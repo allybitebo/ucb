@@ -1,46 +1,65 @@
 <?php
-require_once ("../../../includes/initialize.php");
-//checkAdmin();
-$view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
-
-switch ($view) {
-	case 'list' :
+	require_once ("../../../includes/initialize.php");
+	//checkAdmin();
+	$view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
+	
+	switch ($view) {
+		
+		case '1' :
+		$title= $_GET['school_name'];	
+		$content='departmentlist.php';		
+		break;
+		
+		case 'listOfConsultants' :	
+		$content='listOfConsultants.php';		
+		break;
+		
+		case 'list' :
 		$content   = 'list.php';		
 		break;
-
-	case 'add' :
+		
+		case 'listSchDep' :
+		$content    = 'listDepSchool.php';		
+		break;
+		
+		case 'deptConsul' :
+		// $title= $_GET['department_name'];	
+		$content ='deptConsultantslist.php';
+		break;
+		
+		case 'add' :
 		$content    = 'add.php';		
 		break;
-
-	case 'edit' :
+		
+		case 'edit' :
 		$content    = 'edit.php';		
 		break;
-    case 'view' :
+		case 'view' :
 		$content    = 'view.php';		
 		break;
-	case 'subject' :
+		case 'subject' :
 		$content    = 'studentsubject.php';		
 		break;
-	case 'assign' :
+		case 'assign' :
 		$content    = 'assignsubj.php';		
 		break;
-	case 'delsubj' :
+		case 'delsubj' :
 		$content    = 'assignsubj.php';		
 		break;
-	case 'enroll' :
+		case 'enroll' :
 		$content    = 'enrollment.php';		
 		break;
-	case 'editenrollment' :
-	$content    = 'editenrollment.php';		
-	break;
-
-	default :
+		case 'editenrollment' :
+		$content    = 'editenrollment.php';		
+		break;
+		
+		default :
 		$content    = 'list.php';
-				
-}
-
-require_once '../../theme/frontendTemplateAdmin.php';
+		
+	}
+	
+	require_once '../../theme/frontendTemplateAdmin.php';
 ?>
 
 
-  
+
