@@ -47,6 +47,16 @@
 			return $cur;
 		}
 		
+		//shio added this
+		//list of domain from sectors
+		function domainFromSector($sector_id){
+			global $mydb;
+			$mydb->setQuery("SELECT * 
+			FROM  ".self::$tbl_name. " WHERE domain_sector_id = {$sector_id}");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
+		//end of shio added this
 		
 		/*function listOfDistinctcourse(){
 			global $mydb;

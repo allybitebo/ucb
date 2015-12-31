@@ -18,8 +18,8 @@ switch ($view) {
     case 'view' :
 		$content    = 'view.php';		
 		break;
-	case 'subject' :
-		$content    = 'studentsubject.php';		
+	case 'listDomain' :
+		$content    = 'listDomain.php';		
 		break;
 	case 'assign' :
 		$content    = 'assignsubj.php';		
