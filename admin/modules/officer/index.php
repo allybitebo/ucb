@@ -26,11 +26,11 @@ switch ($view) {
     case 'view' :
 		$content    = 'view.php';		
 		break;
-	case 'subject' :
-		$content    = 'studentsubject.php';		
+	case 'bureauSchool' :
+		$content    = 'listOfficers.php';		
 		break;
-	case 'assign' :
-		$content    = 'assignsubj.php';		
+	case 'officerSchool' :
+		//$content    = 'listOfficerSchool.php';		
 		break;
 	case 'delsubj' :
 		$content    = 'assignsubj.php';		
