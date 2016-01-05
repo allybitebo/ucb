@@ -47,6 +47,24 @@ class Officer{
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
+	
+	//find officer in specific bureau
+			function listOfOfficerBureau($id=0){
+			global $mydb;
+			$mydb->setQuery("SELECT * 
+			FROM ".self::$tbl_name. " WHERE officer_bureau_id = {$id}");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
+		
+		// find officer in specific school
+		function listOfOfficerSchool($school_id){
+			global $mydb;
+			$mydb->setQuery("SELECT * 
+			FROM  ".self::$tbl_name. " WHERE officer_school_id = {$school_id}");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
 	/*---Instantiation of Object dynamically---*/
 	static function instantiate($record) {
 		$object = new self;
