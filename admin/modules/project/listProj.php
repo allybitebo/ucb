@@ -43,23 +43,19 @@
 							<tbody>
 							<?php
 							$account_username = $_SESSION['ACCOUNT_USERNAME'];
-							//$account_password = $_SESSION['ACCOUNT_PASSWORD'];
 							$account_type = $_SESSION['ACCOUNT_TYPE'];
-							//echo 'username =   '. $account_username;echo " \n";
-							//echo 'account type =   '. $account_type;
-							//echo 'password =   '. $account_password;
-							//if($account_username!= Null ) {
-							//$mydb->setQuery("SELECT `project_id` , `project_number` ,`project_name` FROM `projects`");
-							//loadresult();
-							
-							//function loadresult(){
-							//global $mydb;
-							//$cur = $mydb->loadResultList();
-							//foreach ($cur as $project) {
-							$bureau_id = $_GET['sid'];
+							$school_id = $_GET['sid'];
+							$bureau_id = $_GET['bid'];
 							$project = new Project();
-							$projectList = $project->listOfprojectsBureau($bureau_id);
-							foreach ($projectList as $list) {
+							if(isset($school_id) and $school_id!="null"){
+							   $projectList = $project->listOfprojectsSchool($school_id);
+							}else if(isset($bureau_id) and $bureau_id!="null"){							 
+							 $projectList = $project->listOfprojectsBureau($bureau_id);
+							}																					
+							ProjectView($projectList);
+								
+	function ProjectView($projectList){
+		foreach ($projectList as $list) {
 							echo '<tr>';
 							echo '<td width="5%" align="center"></td>';
 							echo '<td width="15%"><input type="checkbox" name="selector[]" id="selector[]" value="'.$list->project_id. '"/>';
@@ -68,6 +64,7 @@
 							echo '<td><a href = "index.php?view=view&projectId='.$list->project_id.'" ><span class="glyphicon glyphicon-list-alt"> </span>  View</a></td>';
 							echo '</tr>';
 							}	
+		}
 							?>
 							
 							

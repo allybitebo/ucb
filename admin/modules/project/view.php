@@ -271,16 +271,12 @@
 								}
 							?>
 						</div>
-						
 					</div>
-					
 				</div>
 			</center>
 			
 			<fieldset>
 			<legend>Project Payment Information</legend>
-			
-			
 			<div class="form-group" id="project_id">
 			<div class="col-md-8">
 			<label class="col-md-4 control-label" for="project_id">Project Payments </label>
@@ -292,12 +288,9 @@
 			}
 			?>
 			</div>
-			
 			</div>
-			
 			</div>
 			</center>
-			
 			</form>
 			<!--	</div><!--End of well-->
 			</div>

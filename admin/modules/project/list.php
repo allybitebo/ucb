@@ -1,4 +1,37 @@
-
+<?php 
+ function school(){
+?>
+  <div>
+	<ul>
+		<?php 
+			$school = new School();
+			$schoolList = $school->listOfSchools();
+			foreach ($schoolList as $list) {
+				echo '<li>';
+				echo '<a href = "index.php?view=listProj&bid=null&&sid='. $list->school_id. '&school_name='. $list->name. '" class="button green"><strong class="title">' . $list->name .'</a></strong>';
+				echo '</li>';
+			}
+		?>
+	</ul>
+</div>
+<?php }
+function bureau(){
+?>
+  <div>
+	<ul>
+		<?php 
+			$bureau = new Bureau();
+			$bureauList = $bureau->listOfBureau();
+			foreach ($bureauList as $list) {
+				echo '<li>';
+				echo '<a href = "index.php?view=listProj&&sid=null&bid='. $list->bureau_id. '&bureau_name='. $list->name. '" class="button green"><strong class="title">' . $list->name .'</a></strong>';
+				echo '</li>';
+			}
+		?>
+	</ul>
+</div>
+<?php }
+?>
 <div class="container">
 	<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -32,7 +65,7 @@
 				<div class="panel panel-primary">
 					<br />
 					<div class="panel-heading"><h5><strong>Project in Schools</strong></h5></div>
-					<?php require_once("school.php"); ?>
+					<?php school(); ?>
 					
 				</div>
 			</div>
@@ -42,7 +75,7 @@
 				<div class="panel panel-primary">
 					<br />
 					<div class="panel-heading"><h5><strong>Projects in Bureaus</strong></h5></div>
-					<?php require_once("bureau.php");?>
+					<?php bureau();?>
 					
 				</div>
 			</div>

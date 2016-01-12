@@ -8,12 +8,8 @@
 		$content    = 'list.php';		
 		break;
 		
-		case 'listSchProj' :
-		$content    = 'listProSchool.php';		
-		break;
-		
-		case 'listBurProj' :
-		$content    = 'listProBureau.php';		
+		case 'listProj' :
+		$content    = 'listProj.php';		
 		break;
 		
 		case 'add' :
