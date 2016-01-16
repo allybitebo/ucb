@@ -54,7 +54,7 @@
 		
 		function single_payment($id=0){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where payment_id= {$id} LIMIT 1");
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where payment_project_id= {$id} LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 		}
