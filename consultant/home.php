@@ -42,7 +42,7 @@
 								</div>
 							</div>
 						</div>
-						<a href="<?php echo WEB_ROOT; ?>consultant/modules/project/index.php?view=ConsultantProject".>
+						<a href="<?php echo WEB_ROOT; ?>consultant/modules/project/index.php?view=consultantProject".>
 							<div class="panel-footer">
 								<span class="pull-left">View Details</span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -82,7 +82,7 @@
 								</div>
 							</div>
 						</div>
-						<a href="<?php echo WEB_ROOT; ?>consultant/modules/consultant/index.php".>
+						<a href="<?php echo WEB_ROOT; ?>consultant/modules/competence/index.php".>
 							<div class="panel-footer">
 								<span class="pull-left">View Details</span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

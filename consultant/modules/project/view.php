@@ -5,26 +5,49 @@
 	$list = $project->single_project($_GET['projectId']);
 	
 	$client = new Client();
-	$clientInfo = $client->listOfProjectClient($_GET['projectId']);
+	$clientCheck = $client->ProjectClientCheck($_GET['projectId']);
+	If ($clientCheck > 0)
+	{
+		$clientInfo = $client->listOfProjectClient($_GET['projectId']);
+	} else {
+		$clientInfo = "add";
+	}
 	
+
 	$consultant = new Consultant();
 	$consultantInfos = $consultant->consultants_in_project($_GET['projectId']);
 	
 	$payment = New Payment();
-	$paymentInfos = $payment->number_installment_project($_GET['projectId']);
+	$paymentInfos = $payment->listOfProjectPayment($_GET['projectId']);
 	
 ?>
-
 <div class="container">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<div class="row">
-				<div class="col-xs-3"><p ><strong><h5 align="left"><?php echo $_SESSION['ACCOUNT_FNAME']. " " .$_SESSION['ACCOUNT_LNAME']  ; ?></h5></strong></p></div>
-				<div class="col-xs-3"></div>
-				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>/officer/index.php?page=1" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></p></div>
-				<div class="col-xs-3"><p align="right"><a href="<?php echo WEB_ROOT; ?>officer/logout.php" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p></div>
-			</div>
-		</div> 
+				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT;?>consultant/index.php?page=2" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a><p>
+				</div>
+				
+				<div class="col-xs-9">
+					<div class="col-xs-8">
+						<p ><strong><h5 align="right">
+						<?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME'];?></h5></strong></p>
+					</div>
+					<div class="col-xs-4">
+						<div class="col-xs-6">
+							<p align="left"><a href="<?php echo WEB_ROOT;?>consultant/modules/project/index.php?view=consultantProject" class="btn btn-info btn-xsm">
+								<span class="glyphicon glyphicon-step-backward"></span>Back
+								</a
+								</p>
+							</div>
+							<div class="col-xs-6">
+								<p align="right"><a href="<?php echo WEB_ROOT;?>consultant/logout.php"
+								class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div> 
 		<form class="form-horizontal well span9" action="controller.php?action=edit&id=<?php echo $list->project_id; ?>" method="POST">
 			
 			<fieldset>
@@ -217,27 +240,34 @@
 							<label class="col-md-4 control-label" for="clientName">Client Name</label>
 							
 							<div class="col-md-8">
-								<input class="form-control input-sm" id="clientName" name="clientName" type="text" value="<?php echo $clientInfo->client_name; ?>" readonly>
-							</div>
+								<?php 
+									if ($clientInfo == "add")
+									{
+										echo '<a href="index.php?view=addProjectClient&project_id='.$_GET['projectId'].'" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>Add Project Client</a>';
+										} else {
+										echo '<input class="form-control input-sm" id="clientName" name="clientName" type="text" value="'.$clientInfo->client_name.'" readonly>';
+									}
+								?>
+								</div>
 						</div>
 						
 					</div>
-				</div>
-				
-			</center>
-			
-			<fieldset>
-				<legend>Project Consultants Information</legend>
-				
-				
-				<div class="form-group" id="project_id">
-					<div class="col-md-8">
+					</div>
+					
+					</center>
+					
+					<fieldset>
+					<legend>Project Consultants Information</legend>
+					
+									
+									<div class="form-group" id="project_id">
+									<div class="col-md-8">
 						<label class="col-md-4 control-label" for="project_id">Project Consultants</label>
 						
 						<div class="col-md-8">
 							<?php
 								foreach ($consultantInfos as $constInfo) {
-									echo '<li>'. $constInfo->displayname. '</li>';
+									echo '<li>'. $constInfo->displayname .'</li>';
 								}
 							?>
 						</div>
@@ -248,36 +278,29 @@
 			</center>
 			
 			<fieldset>
-				<legend>Project Payment Information</legend>
-				
-				
-				<div class="form-group" id="project_id">
-					<div class="col-md-8">
-						<label class="col-md-4 control-label" for="project_id">Project Number </label>
-						
-						<div class="col-md-8">
-							<input class="form-control input-sm" id="project_id" name="project_id" type="text" value="<?php echo $list->project_number; ?>" readonly>
-						</div>
-						
-					</div>
-					
-						</div>
+			<legend>Project Payment Information</legend>
+			
+			
+			<div class="form-group" id="project_id">
+			<div class="col-md-8">
+			<label class="col-md-4 control-label" for="project_id">Project Payments </label>
+			
+			<div class="col-md-8">
+			<?php
+			foreach ($paymentInfos as $installmentInfo) {
+			echo '<li> Installment number '. $installmentInfo->installment_number .'</li>';
+			}
+			?>
+			</div>
+			
+			</div>
+			
+			</div>
 			</center>
 			
-			<?php
-				
-				/*if($_SESSION['ACCOUNT_TYPE']=='officer'){
-					echo '
-					<div class="col-md-6" align="right">
-					<button class="btn btn-primary" name="submit" type="submit" >Save</button>
-					
-					</div>';
-				}*/ 
-			?>
+			</form>
+			<!--	</div><!--End of well-->
+			</div>
+			</div><!--End of container-->
 			
-		</form>
-		<!--	</div><!--End of well-->
-		</div>
-		</div><!--End of container-->
-		
-				
+						

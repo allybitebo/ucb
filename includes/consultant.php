@@ -96,7 +96,7 @@
 		
 		function single_consultant($id=0){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where consultant_id= {$id} LIMIT 1");
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where consultant_id = {$id} LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 		}

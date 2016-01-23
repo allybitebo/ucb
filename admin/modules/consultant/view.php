@@ -235,6 +235,6 @@
 		</center>
 	</form>
 	<!--	</div><!--End of well-->
-	
+	</div>
 </div><!--End of container-->
 

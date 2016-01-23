@@ -1,4 +1,31 @@
-
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT;?>consultant/index.php?page=2" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a><p>
+				</div>
+				
+				<div class="col-xs-9">
+					<div class="col-xs-8">
+						<p ><strong><h5 align="right">
+						<?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME'];?></h5></strong></p>
+					</div>
+					<div class="col-xs-4">
+						<div class="col-xs-6">
+							<p align="left"><a href="<?php echo WEB_ROOT;?>consultant/index.php" class="btn btn-info btn-xsm">
+								<span class="glyphicon glyphicon-step-backward"></span>Back
+								</a
+								</p>
+							</div>
+							<div class="col-xs-6">
+								<p align="right"><a href="<?php echo WEB_ROOT;?>consultant/logout.php"
+								class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			
 		<div class="wells">
 				<h3 align="left"><legend>List of Competence</legend></h3>
 			    <form action="controller.php?action=list" Method="POST">  					
@@ -16,13 +43,13 @@
 				  <tbody>
 				  	<?php
 						$account_username = $_SESSION['ACCOUNT_USERNAME'];
-						$account_password = $_SESSION['ACCOUNT_PASSWORD'];
+						//$account_password = $_SESSION['ACCOUNT_PASSWORD'];
 						$account_type = $_SESSION['ACCOUNT_TYPE'];
 						//echo 'username =   '. $account_username;echo " \n";
 				        //echo 'account type =   '. $account_type;
 						//echo 'password =   '. $account_password;
 						if($account_password!= Null ) {
-					
+							
 								$competence = new Competence();
 								$competenceList = $competence->listOfCompetence();
 								foreach ($competenceList as $list) {
@@ -39,7 +66,7 @@
 						} else {
 			
 								$competence = new Competence();
-								$competenceList = $competence->listOfCompetence($competence_id);
+								//$competenceList = $competence->listOfCompetence($competence_id);
 								foreach ($competenceList as $list) {
 								echo '<tr>';
 
@@ -48,26 +75,13 @@
 								}
 
 							}
-						
-				  	  	
-				  	
 				  	?>
-
-
+					
 				  </tbody>
-				 
 				</table>
 				
-		<div class="form-group">
-			<div class="col-md-8">
-				<label class="col-md-4 control-label" for="address">New Competence:</label>
-				<div class="col-md-4" >
-					<li class="leaf"><a href="<?php echo WEB_ROOT; ?>admin/modules/competence/index.php?view=add"> Add </a></li>
-				</div>
-			</div>
-		</div>
 				<?php 
-					if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
+					if($_SESSION['ACCOUNT_TYPE']=='administrator'){
 						echo '
 						<div class="btn-group">
 						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
@@ -83,5 +97,5 @@
 				?>
 				</form>
 	  	</div><!--End of well-->
-
+</div>
 </div><!--End of container-->

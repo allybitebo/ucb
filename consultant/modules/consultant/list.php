@@ -1,4 +1,30 @@
-
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+		<div class="row">
+				<div class="col-xs-3"><p align="left"><a href="<?php echo WEB_ROOT;?>consultant/index.php?page=2" class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a><p>
+				</div>
+				
+				<div class="col-xs-9">
+					<div class="col-xs-8">
+						<p ><strong><h5 align="right">
+						<?php echo  $_SESSION['ACCOUNT_FNAME'] . " " . $_SESSION['ACCOUNT_LNAME'];?></h5></strong></p>
+					</div>
+					<div class="col-xs-4">
+						<div class="col-xs-6">
+							<p align="left"><a href="<?php echo WEB_ROOT;?>consultant/index.php?page=2" class="btn btn-info btn-xsm">
+								<span class="glyphicon glyphicon-step-backward"></span>Back
+							</a
+							</p>
+						</div>
+						<div class="col-xs-6">
+						<p align="right"><a href="<?php echo WEB_ROOT;?>consultant/logout.php"
+						 class="btn btn-info btn-xsm"><span class="glyphicon glyphicon-log-out"></span>Log out</a></p>
+					</div>
+					</div>
+				</div>
+				</div>
+		</div>
 		<div class="wells">
 				<h3 align="left"><legend>List of Consultants</legend></h3>
 			    <form action="controller.php?action=list" Method="POST">  					
@@ -17,8 +43,6 @@
 				  <tbody>
 				  	<?php
 						$account_username = $_SESSION['ACCOUNT_USERNAME'];
-						//$account_password = $_SESSION['ACCOUNT_PASSWORD'];
-					
 						if($account_username!= Null) {
 			
 								$consultant = new Consultant();
@@ -43,17 +67,9 @@
 				  </tbody>
 				 
 				</table>
-				
-		<div class="form-group">
-			<div class="col-md-8">
-				<label class="col-md-4 control-label" for="address">New Consultant:</label>
-				<div class="col-md-4" >
-					<li class="leaf"><a href="<?php echo WEB_ROOT; ?>admin/modules/consultant/index.php?view=add"> Add </a></li>
-				</div>
-			</div>
-		</div>
+	
 				<?php 
-					if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
+					if($_SESSION['ACCOUNT_TYPE']=='administrator'){
 						echo '
 						<div class="btn-group">
 						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
@@ -65,9 +81,9 @@
 						  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>  New</a>
 						</div>';
 					}
-
 				?>
 				</form>
+				<br />
 	  	</div><!--End of well-->
 
 </div><!--End of container-->

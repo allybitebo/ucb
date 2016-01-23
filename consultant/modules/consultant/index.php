@@ -39,7 +39,7 @@ switch ($view) {
 				
 }
 
-require_once '../../theme/frontendTemplateAdmin.php';
+require_once '../../theme/frontendTemplateConsultant.php';
 ?>
 
 
