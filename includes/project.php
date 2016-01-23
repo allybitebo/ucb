@@ -48,7 +48,7 @@
 		
 		function ProjectsByConsultant($consultant_id=0){
 			global $mydb;
-			$mydb->setQuery("SELECT `cons_proj_project_id`, `project_number`, `project_name` 
+			$mydb->setQuery("SELECT `cons_proj_project_id`, `project_number`, `project_name` ,`project_id`
 			FROM `consultant_project` JOIN `projects` ON `cons_proj_project_id` = `project_id` 
 			WHERE `cons_proj_consultant_id` = '{$consultant_id}'");
 			$cur = $mydb->loadResultList();
