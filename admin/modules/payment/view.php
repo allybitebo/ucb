@@ -33,7 +33,7 @@
 					<div class="col-xs-4">
 						<div class="col-xs-6">
 							
-							<p align="left"><a href="<?php echo WEB_ROOT;?>admin/modules/payment/index.php?" class="btn btn-info btn-xsm">
+							<p align="left"><a onclick="history.back();" class="btn btn-info btn-xsm">
 								<span class="glyphicon glyphicon-step-backward"></span>Back
 								</a
 								</p>
