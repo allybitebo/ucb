@@ -256,3 +256,18 @@ CREATE TABLE IF NOT EXISTS `officers` (
   INDEX `index_officer_school_id` (`officer_school_id`),
   INDEX `index_officer_user_id` (`officer_user_account_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+//added by shio 27-1-2016
+
+CREATE TABLE IF NOT EXISTS `consultant_competence` (
+`consu_compe_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `consu_compe_consultant_id` int(10) unsigned NOT NULL,
+  `consu_compe_competence_id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`consu_compe_id`),
+  CONSTRAINT `FK_consu_compe_consultant_id` FOREIGN KEY (`consu_compe_consultant_id`) REFERENCES `consultants` (`consultant_id`),
+  CONSTRAINT `FK_consu_compe_competence_id` FOREIGN KEY (`consu_compe_competence_id`) REFERENCES `competences` (`competence_id`),
+  INDEX `index_consu_compe_consultant_id` (`consu_compe_consultant_id`),
+  INDEX `index_consu_compe_competence_id` (`consu_compe_competence_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
