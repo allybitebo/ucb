@@ -94,9 +94,9 @@
 			return $cur;
 		}
 		
-		function single_consultant($id=0){
+		function single_consultant($consultant_id){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where consultant_id = {$id} LIMIT 1");
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where consultant_id = '{$consultant_id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 		}
