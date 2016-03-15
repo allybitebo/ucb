@@ -1,115 +1,54 @@
-<br />
-<div class="container">
-  <div class="row">
-  	<div class="col-md-12">
-    
-      <div class="panel panel-default">
-			<div class="panel-body">
-              		<div class="row">
-                        <div class="col-xs-12 col-sm-8">
-                            <h2><?php echo $_GET['consultant_name']; ?></h2>
-                            <p><strong>About: </strong> Web Designer / UI. </p>
-                            <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-                            <p><strong>Skills: </strong><br />
-                                <span class="label label-info tags">html5</span> 
-                                <span class="label label-info tags">css3</span>
-                                <span class="label label-info tags">jquery</span>
-                                <span class="label label-info tags">bootstrap3</span>
-                            </p>
-                        </div><!--/col-->          
-                        <div class="col-xs-12 col-sm-4 text-center">
-                                <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive">
-                                <ul class="list-inline ratings text-center" title="Ratings">
-                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                </ul>
-                        </div><!--/col-->
-
-                        <div class="col-xs-12 col-sm-4">
-                            <h2><strong> 20,7K </strong></h2>                    
-                            <p><small>Followers</small></p>
-                            <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
-                        </div><!--/col-->
-                        <div class="col-xs-12 col-sm-4">
-                            <h2><strong>245</strong></h2>                    
-                            <p><small>Following</small></p>
-                            <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
-                        </div><!--/col-->
-                        <div class="col-xs-12 col-sm-4">
-                            <h2><strong>43</strong></h2>                    
-                            <p><small>Snippets</small></p>
-                            <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>  
-                        </div><!--/col-->
-              		</div><!--/row-->
-              </div><!--/panel-body-->
-          </div><!--/panel-->
-
-    
-    
-    </div>
-  </div>
-</div>
+<?php 
+	$consultant_id = $_GET['con_id'];
+	//echo $consultant_id;
+	
+	$competence = new Competence();
+	$competenceList = $competence->listOfConsultantCompetence($consultant_id);
+	
+	$project = new Project();
+	$projectList = $project->ProjectsByConsultant($consultant_id);
+?>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12 col-xs-12">
-      <div class="well panel panel-default">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-xs-12 col-sm-4 text-center">
-              <img src="http://api.randomuser.me/portraits/women/21.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
-              <ul class="list-inline ratings text-center" title="Ratings">
-                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-              </ul>
-            </div>
-            <!--/col--> 
-            <div class="col-xs-12 col-sm-8">
-              <h2>Jane Doe</h2>
-              <p><strong>About: </strong> Web Designer / UI Expert. </p>
-              <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-              <p><strong>Skills: </strong>
-                <span class="label label-info tags">html5</span> 
-                <span class="label label-info tags">css3</span>
-                <span class="label label-info tags">jquery</span>
-                <span class="label label-info tags">bootstrap3</span>
-              </p>
-            </div>
-            <!--/col-->          
-            <div class="clearfix"></div>
-            <div class="col-xs-12 col-sm-4">
-              <h2><strong> 20,7K </strong></h2>
-              <p><small>Followers</small></p>
-              <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
-            </div>
-            <!--/col-->
-            <div class="col-xs-12 col-sm-4">
-              <h2><strong>245</strong></h2>
-              <p><small>Following</small></p>
-              <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
-            </div>
-            <!--/col-->
-            <div class="col-xs-12 col-sm-4">
-              <h2><strong>43</strong></h2>
-              <p><small>Snippets</small></p>
-              <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>  
-            </div>
-            <!--/col-->
-          </div>
-          <!--/row-->
-        </div>
-        <!--/panel-body-->
-      </div>
-      <!--/panel-->
-    </div>
-    <!--/col--> 
-  </div>
-  <!--/row--> 
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+			<div class="well panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12 col-sm-4 text-center">
+							<img src="img/Hashim.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+						</div>
+						<!--/col--> 
+						<div class="col-xs-12 col-sm-8">
+							<h2><?php echo $_GET['consultant_name']?></h2>
+							<p><strong>Lecture </strong></p>
+							<p><strong>College of Engineering and Technology: </strong> </p>
+							<p><strong>Dar es Salaam </strong></p>
+							<p><strong>Telephone:</strong>  +255766989150 </p>
+							<p><strong>Email:</strong>  inocentvicent@udsm.tz</p>
+						</div>
+						
+						<!--/col-->
+						<div class="container">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#">Biography</a></li>
+								<li><a href="#"><strong>Competence</strong></a></li>
+								<li><a href="#"><strong>Projects</strong></a></li>
+								<li><a href="#"><strong>Publication</strong></a></li> 
+							</ul>
+						</div>
+						<!--/col-->
+						
+						<!--/col-->
+					</div>
+					<!--/row-->
+				</div>
+				<!--/panel-body-->
+			</div>
+			<!--/panel-->
+		</div>
+		<!--/col--> 
+	</div>
+	<!--/row--> 
 </div>
-<!--/container-->
+<!--/container-->		

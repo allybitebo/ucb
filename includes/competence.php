@@ -1,6 +1,6 @@
 <?php
 /**
-* Description:	This is a class for department.
+	* Description:	This is a class for department.
 * Author:		Joken Villanueva
 * Date Created:	June 8, 2013
 * Revised By:	Ally Bitebo
@@ -20,6 +20,16 @@ class Competence{
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 							FROM  ".self::$tbl_name);
+			$cur = $mydb->loadResultList();
+			return $cur;
+	}
+	
+	//added by shio
+		function listOfConsultantCompetence($consultant_id){
+			global $mydb;
+			$mydb->setQuery("SELECT `name` 
+			FROM `competences` JOIN `consultant_competence` ON `competence_id` = `consu_compe_competence_id`
+			WHERE consu_compe_consultant_id = '{$consultant_id}'");
 			$cur = $mydb->loadResultList();
 			return $cur;
 	}
