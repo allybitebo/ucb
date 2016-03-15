@@ -28,15 +28,45 @@
 							<p><strong>Email:</strong>  inocentvicent@udsm.tz</p>
 						</div>
 						
-						<!--/col-->
-						<div class="container">
-							<ul class="nav nav-tabs">
-								<li class="active"><a href="#">Biography</a></li>
-								<li><a href="#"><strong>Competence</strong></a></li>
-								<li><a href="#"><strong>Projects</strong></a></li>
-								<li><a href="#"><strong>Publication</strong></a></li> 
-							</ul>
-						</div>
+						<!--/col-->					
+						<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home"><strong>Biography</strong></a></li>
+  <li><a data-toggle="tab" href="#competence"><strong>Competence</strong></a></li>
+  <li><a data-toggle="tab" href="#projects"><strong>Projects</strong></a></li>
+  <li><a data-toggle="tab" href="#publication"><strong>Publication</strong></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+  <br>
+    <p> <?php echo $_GET['consultant_name']?> is a blah blah .....(need to load info from somewhere)
+		
+		</p>
+  </div>
+  <div id="competence" class="tab-pane fade">
+  <br>  
+    <p><?php foreach ($competenceList as $comlist){
+								echo '<li>';
+								echo $comlist->name;
+								echo '</li>';
+							}?>
+							</p>
+  </div>
+  <div id="projects" class="tab-pane fade">
+  <br> 
+  <p><?php foreach ($projectList as $proList){
+								echo '<li>';
+								echo $proList->project_name; 
+								echo '</li>';
+							}
+							?>
+							</p>
+  </div>
+  <div id="publication" class="tab-pane fade">
+  <br>
+    <p>No Publication</p>
+  </div>
+</div>
 						<!--/col-->
 						
 						<!--/col-->
