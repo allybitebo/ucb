@@ -55,7 +55,7 @@
 							$sector = new Sector();
 							$cur = $sector->listOfSectors();	
 							foreach ($cur as $sector) {
-								echo '<option value="'. $sector->sector_id.'">'. $sector->sector_name .'</option>';
+								echo '<option value="'. $sector->sector_id.'">'. $sector->name .'</option>';
 							}
 							
 						?>
@@ -74,7 +74,7 @@
 							$domain = new Domain();
 							$cur = $domain->listOfDomains();	
 							foreach ($cur as $domain) {
-								echo '<option value="'. $domain->domain_id.'">'. $domain->domain_name .'</option>';
+								echo '<option value="'. $domain->domain_id.'">'. $domain->name .'</option>';
 							}
 							
 						?>
