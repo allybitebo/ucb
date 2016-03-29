@@ -2,10 +2,6 @@
 	<ul>
 		<?php
 		$department_id = $_GET['did'];
-			/*$mydb->setQuery("SELECT  `department_id`, `department_name` 
-			FROM  `departments`
-			WHERE school_id = $school_id");
-			$schoolList = $mydb->loadResultList();*/
 			$consultant = new Consultant();
 			$consultantList = $consultant->listOfDepartmentConsultant($department_id);
 			foreach ($consultantList as $list) {
